@@ -1,7 +1,8 @@
-Logical: OrganizationLogical
-Id: organization-logical-model
+Logical: VOKOrganizationLogical
+Id: vok-organization-logical-model
 Title: "Organization logical model"
 Description: "Organization in VOK logical model"
+Characteristics: #can-bind
 * giltigFrom 1..1 dateTime "organisationen är aktiv?? från och med"
 * giltigTill 0..1 dateTime "organisationen är aktiv?? till"
 * id 1..* string "id"
@@ -45,13 +46,13 @@ Title: "VOK extension for organization status (active, suspended, 'avvecklat')"
 * valueCode from VOKOrganizationStatusVS
 
 Mapping: VOKOrganizationProfileToLogical
-Source: OrganizationLogical
-Target: "VOKOrganization"
+Source: VOKOrganization
+Target: "VOKOrganizationLogical"
+* identifier -> "vok-organization-logical-model.id"
 // * giltigFrom 
 // * giltigTill 
-* id -> "Organization.identifier"
 // * juridiskForm 
-* popularnamn -> "Organization.alias"
-* registreratNamn -> "Organization.name"
+* name -> "vok-organization-logical-model.registreratNamn"
+* alias -> "popularnamn"
 // * status 
 // * agarkategori 
