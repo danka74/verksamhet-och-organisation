@@ -1,0 +1,1 @@
+Alias: $SCTSE = http://snomed.info/sct|http://snomed.info/sct/45991000052106
