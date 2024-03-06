@@ -16,11 +16,6 @@ Description: """arbete som fortlöpande utförs i linje med viss övergripande i
 * type.coding[VOKType] from VOKServiceTypeValueSet (required)
 * type.coding[HSAType] from HSAServiceTypeValueSet (required)
 
-Mapping: VOKVerksamhetLogicalToProfile
-Source: VOKVerksamhetLogical
-Target: "VOKVerksamhet" 
-* typ -> "HealthcareService.type"
-
 ValueSet: VOKServiceTypeValueSet
 Id: vok-service-type-value-set
 Title: "VOK Service Type ValueSet"

@@ -34,6 +34,15 @@ Target: "VOKHealthcareService"
 // * giltigFrom -> "HealthcareService"
 // * giltigTom 0..1 dateTime "giltigTom" // Datum
 
+Mapping: VOKMalgruppLogicalToProfile
+Source: VOKMalgruppLogical
+Target: "VOKHealthcareService"
+// * kod 1..1 Coding "kod" // Kod
+// * beskrivning 1..1 string "beskrivning" // Sträng
+* alderMin -> "HealthcareService.eligibility[ageRange].extension[eligibilityValue].valueRange.low"
+* alderMax -> "HealthcareService.eligibility[ageRange].extension[eligibilityValue].valueRange.high"
+* kon -> "HealthcareService.eligibility[sex].extension[eligibilityValue].valueCoding"
+
 Mapping: VOKUppdragLogicalToProfile
 Source: VOKUppdragLogical
 Target: "VOKOrganizationAffiliation"
@@ -53,3 +62,8 @@ Target: "VOKContract"
 // * giltigFrom 1..1 dateTime "giltigFrom" // Datum
 // * giltigTom 0..1 dateTime "giltigTom" // Datum
 // * optionForlangning 1..1 string "optionFörlängning" // Sträng
+
+Mapping: VOKVerksamhetLogicalToProfile
+Source: VOKVerksamhetLogical
+Target: "VOKVerksamhet" 
+* typ -> "HealthcareService.type"

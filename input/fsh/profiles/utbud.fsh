@@ -7,7 +7,19 @@ Description: "text"
 * type 1..1 MS
 * category 0..*
 * name 0..1 MS // beskrivning? 0..*
-* characteristic 0..* MS // remisskrav, mötesform?
+* appointmentRequired 1..1 MS // remisskrav??
 * availableTime 0..* MS
 * notAvailable 0..* MS
 * eligibility 0..* MS
+* eligibility.extension contains VOKEligibilityValueExtension named eligibilityValue 1..1 MS
+* eligibility ^slicing.discriminator.type = #value
+* eligibility ^slicing.discriminator.path = "code"
+* eligibility ^slicing.rules = #open
+* eligibility ^slicing.ordered = false   // can be omitted, since false is the default
+* eligibility ^slicing.description = "Slice based on the eligibility.code value"
+* eligibility contains ageRange 0..1 and sex 0..1
+* eligibility[ageRange].code = $SCT#424144002 "aktuell kronologisk ålder"
+* eligibility[sex].code = $SCT#184100006 "patientens kön"
+* location 0..* MS
+* location only Reference(VOKLocation)
+* telecom 0..* MS

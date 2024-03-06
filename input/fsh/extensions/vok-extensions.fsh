@@ -23,3 +23,12 @@ Title: "VOK extension for organization ownership type"
 * ^context[0].expression = "Organization"
 * value[x] only Coding
 * valueCoding from SCBOwnershipValueSet (required)
+
+// backported from 6.0.0-ci build
+Extension: VOKEligibilityValueExtension
+Title: "VOK extension for HealthcareService eligibility value"
+* ^status = #active
+* ^experimental = false
+* ^context[0].type = #element
+* ^context[0].expression = "HealthcareService.eligibility"
+* value[x] 1..1
