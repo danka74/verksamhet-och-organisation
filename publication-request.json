@@ -1,0 +1,10 @@
+{
+    "package-id" : "ehalsomyndigheten.se.katalog",
+    "version" : "0.1.0",
+    "path" : "http://ehalsomyndigheten.se/fhir/vok/0.1.0",
+    "mode": "milestone",
+    "status" : "trial-use",
+    "sequence" : "STU 1",
+    "first": false,
+    "desc" : "This is the Edition 1 STU 1 release"
+  }
