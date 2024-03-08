@@ -28,7 +28,7 @@ Source: VOKVardOchOmsorgstjanstLogical
 Target: "VOKHealthcareService"
 * id -> "HealthcareService.identifier"
 * typ -> "HealthcareService.type"
-// * remisskrav 1..1 boolean "remisskrav" // Bool
+* remisskrav -> "HealthcareService.extension[referralRequired].valueBoolean"
 // * motesform 1..* Coding "mötesform" // Kod
 * beskrivning -> "HealthcareService.name" // TODO: korrekt?
 // * giltigFrom -> "HealthcareService"
