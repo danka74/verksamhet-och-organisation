@@ -18,9 +18,11 @@ Description: "text"
 * eligibility ^slicing.rules = #open
 * eligibility ^slicing.ordered = false   // can be omitted, since false is the default
 * eligibility ^slicing.description = "Slice based on the eligibility.code value"
-* eligibility contains ageRange 0..1 and sex 0..1
-* eligibility[ageRange].code = $SCT#424144002 "aktuell kronologisk ålder"
-* eligibility[sex].code = $SCT#184100006 "patientens kön"
+// * eligibility contains ageRange 0..1 and sex 0..1 and BMI 0..1
+// * eligibility[ageRange].code = $SCT#424144002 "aktuell kronologisk ålder" (exactly)
+// * eligibility[sex].code = $SCT#184100006 "patientens kön"  (exactly)
+// BMI
+* eligibility.code.coding from VOKEligibilityCharacteristicsValueset (extensible)
 * location 0..* MS
 * location only Reference(VOKLocation)
 * telecom 0..* MS

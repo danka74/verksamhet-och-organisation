@@ -11,5 +11,5 @@ Description: "organisation i VOK"
 * extension[period].valuePeriod.end 0..1 MS
 * extension contains VOKOrganizationLegalFormExtension named legalForm 1..1 MS
 * extension contains VOKOrganizationOwnershipExtension named ownershipType 1..1 MS
-* partOf MS
+* partOf 0..1 MS
 * partOf only Reference(VOKOrganization)
