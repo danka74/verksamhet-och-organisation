@@ -1,6 +1,6 @@
 ValueSet: VOKEligibilityCharacteristicsValueset
 Id: vok-eligibility-characteristics-valueset
-Title: "VOKEligibilityCharacteristicsValueset"
+Title: "VOK Eligibility characteristics valueset"
 Description: "Value set for eligibility characteristics"
 * $SCT#424144002 "aktuell kronologisk ålder"
 * $SCT#184100006 "patientens kön"
