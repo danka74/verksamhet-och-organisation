@@ -5,7 +5,7 @@
 
 Logical: VOKAvtalLogical
 Parent: Base
-Id: avtal
+Id: avtal-logical
 Title: "Avtal"
 Characteristics: #can-be-target
 * id 1..* string "Id" // Identitet
@@ -22,7 +22,7 @@ Characteristics: #can-be-target
 
 Logical: VOKAvtalssambandLogical
 Parent: Base
-Id: avtalssamband
+Id: avtalssamband-logical
 Title: "Avtalssamband"
 Characteristics: #can-be-target
 * typ 1..1 Coding "typ" // Kod
@@ -30,20 +30,18 @@ Characteristics: #can-be-target
 
 Logical: VOKKontaktuppgiftLogical
 Parent: Base
-Id: kontaktuppgift
+Id: kontaktuppgift-logical
 Title: "Kontaktuppgift"
 Characteristics: #can-be-target
 * id 1..1 string "id" // Identitet
 * syfte 1..1 Coding "syfte" // Kod
-* adressrad 0..* string "adressrad" // Sträng
-* adress 0..1 string "adress" // Sträng
-* adresstyp 0..1 Coding "adresstyp" // Kod
-* postnummer 0..1 string "postnummer" // Sträng
-* stad 0..1 string "stad" // Sträng
-* land 0..1 string "land" // Sträng
+* adress 0..* BackboneElement "adress"
+* adress.rad 0..* string "adress.rad" // Sträng
+* adress.postnummer 0..1 string "adress.postnummer" // Sträng
+* adress.land 0..1 string "adress.land" // Sträng
 * giltigFrom 1..1 time "giltigFrom" // Tidpunkt
 * giltigTom 0..1 time "giltigTom" // Tidpunkt
-* gallerFor 0..1 Reference(VOKOrganisatoriskEnhetLogical) "gäller för"
+* har 0..1 Reference(VOKOrganisatoriskEnhetLogical) "har"
 * finnsTillgangligUnder 0..* Reference(VOKTillganglighetstidLogical) "finns tillgänglig under"
 * arEnDelAv 0..* Reference(VOKTelekommunikationLogical) "är en del av"
 * harTillganglighetsavvikelse 0..* Reference(VOKStorningsinformationLogical) "har tillgänglighetsavvikelse"
@@ -51,7 +49,7 @@ Characteristics: #can-be-target
 
 Logical: VOKMalgruppLogical
 Parent: Base
-Id: malgrupp
+Id: malgrupp-logical
 Title: "Målgrupp"
 Characteristics: #can-be-target
 * kod 1..1 Coding "kod" // Kod
@@ -63,14 +61,14 @@ Characteristics: #can-be-target
 
 Logical: VOKOrganisationLogical
 Parent: Base
-Id: organisation
+Id: organisation-logical
 Title: "Organisation"
 Characteristics: #can-be-target
 * id 1..* string "id" // Identitet
 * typ 1..1 Coding "typ" // Kod
 * status 1..1 Coding "status" // Kod
-* registreratnamn 1..1 string "registreratnamn" // Sträng
-* popularnamn 0..* string "populärnamn" // Sträng
+* foretagsnamn 1..1 string "företagsnamn" // Sträng
+* alias 0..* string "alias" // Sträng
 * juridiskForm 1..1 Coding "juridiskForm" // Kod
 * agarkategori 1..1 Coding "ägarkategori" // Kod
 * giltigFrom 0..1 time "giltigFrom" // Tidpunkt
@@ -80,7 +78,7 @@ Characteristics: #can-be-target
 
 Logical: VOKOrganisationSambandLogical
 Parent: Base
-Id: organisation-samband
+Id: organisation-samband-logical
 Title: "OrganisationSamband"
 Characteristics: #can-be-target
 * sambandstyp 1..1 Coding "sambandstyp" // Kod
@@ -88,14 +86,14 @@ Characteristics: #can-be-target
 
 Logical: VOKOrganisatoriskEnhetLogical
 Parent: Base
-Id: organisatorisk-enhet
+Id: organisatorisk-enhet-logical
 Title: "OrganisatoriskEnhet"
 Characteristics: #can-be-target
-* id 1..1 string "id" // Identitet
+* id 1..* string "id" // Identitet
 * typ 0..* Coding "typ" // Kod
 * status 1..1 Coding "status" // Kod
 * enhetsnamn 1..* string "enhetsnamn" // Sträng
-* popularnamn 0..* string "populärnamn" // Sträng
+* alias 0..* string "alias" // Sträng
 * giltigFrom 1..1 time "giltigFrom" // Tidpunkt
 * giltigTom 0..1 time "giltigTom" // Tidpunkt
 * relationOrganisatoriskEnhet 0..* Reference(VOKOrganisatoriskEnhetLogical) ""
@@ -108,7 +106,7 @@ Characteristics: #can-be-target
 
 Logical: VOKOrganisatoriskEnhetSambandLogical
 Parent: Base
-Id: organisatorisk-enhet-samband
+Id: organisatorisk-enhet-samband-logical
 Title: "OrganisatoriskEnhetSamband"
 Characteristics: #can-be-target
 * sambandstyp 1..1 Coding "sambandstyp" // Kod
@@ -116,16 +114,16 @@ Characteristics: #can-be-target
 
 Logical: VOKPersonLogical
 Parent: Base
-Id: person
+Id: person-logical
 Title: "Person"
 Characteristics: #can-be-target
 * namn 1..1 string "namn" // Sträng
-* relationPersonroll 0..* Reference(VOKPersonrollLogical) ""
+* antar 0..* Reference(VOKPersonrollLogical) "antar"
 
 
 Logical: VOKPersonrollLogical
 Parent: Base
-Id: personroll
+Id: personroll-logical
 Title: "Personroll"
 Characteristics: #can-be-target
 * kod 1..1 Coding "kod" // Kod
@@ -139,7 +137,7 @@ Characteristics: #can-be-target
 
 Logical: VOKPlatsLogical
 Parent: Base
-Id: plats
+Id: plats-logical
 Title: "Plats"
 Characteristics: #can-be-target
 * id 1..1 string "id" // Identitet
@@ -158,7 +156,7 @@ Characteristics: #can-be-target
 
 Logical: VOKRemissanvisningLogical
 Parent: Base
-Id: remissanvisning
+Id: remissanvisning-logical
 Title: "Remissanvisning"
 Characteristics: #can-be-target
 * adress 1..1 url "adress" // URL
@@ -166,7 +164,7 @@ Characteristics: #can-be-target
 
 Logical: VOKStorningsinformationLogical
 Parent: Base
-Id: storningsinformation
+Id: storningsinformation-logical
 Title: "Störningsinformation"
 Characteristics: #can-be-target
 * beskrivning 1..1 string "beskrivning" // Sträng
@@ -176,7 +174,7 @@ Characteristics: #can-be-target
 
 Logical: VOKTelekommunikationLogical
 Parent: Base
-Id: telekommunikation
+Id: telekommunikation-logical
 Title: "Telekommunikation"
 Characteristics: #can-be-target
 * varde 1..1 string "värde" // Sträng
@@ -188,19 +186,19 @@ Characteristics: #can-be-target
 
 Logical: VOKTillganglighetstidLogical
 Parent: Base
-Id: tillganglighetstid
+Id: tillganglighetstid-logical
 Title: "Tillgänglighetstid"
 Characteristics: #can-be-target
 * dygnetRunt 0..1 boolean "dygnetRunt" // Bool
-* starttid 0..1 time "starttid" // Tidpunkt
-* sluttid 0..1 time "sluttid" // Tidpunkt
+* starttid 0..1 time "starttid" // Tid
+* sluttid 0..1 time "sluttid" // Tid
 * veckodag 0..* Coding "veckodag" // Kod
 * finnsTillganglig 1..* Reference(VOKVardOchOmsorgstjanstLogical) "finns tillgänglig"
 
 
 Logical: VOKUppdragLogical
 Parent: Base
-Id: uppdrag
+Id: uppdrag-logical
 Title: "Uppdrag"
 Characteristics: #can-be-target
 * typ 1..1 Coding "typ" // Kod
@@ -214,7 +212,7 @@ Characteristics: #can-be-target
 
 Logical: VOKVerksamhetLogical
 Parent: Base
-Id: verksamhet
+Id: verksamhet-logical
 Title: "Verksamhet"
 Characteristics: #can-be-target
 * typ 1..1 Coding "typ" // Kod
@@ -223,7 +221,7 @@ Characteristics: #can-be-target
 
 Logical: VOKVardOchOmsorgstjanstLogical
 Parent: Base
-Id: vard-och-omsorgstjanst
+Id: vard-och-omsorgstjanst-logical
 Title: "Vård- och omsorgstjänst"
 Characteristics: #can-be-target
 * id 1..1 string "id" // Identitet
