@@ -26,6 +26,7 @@ publisher:
 #
 dependencies:
   hl7se.fhir.base: 1.0.0
+  hl7.fhir.extensions.r5: 4.0.1
 #   hl7.fhir.us.core: 3.1.0
 #   hl7.fhir.us.mcode:
 #     id: mcode
