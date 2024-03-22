@@ -27,7 +27,7 @@ Source: VOKVardOchOmsorgstjanstLogical
 Target: "VOKHealthcareService"
 * id -> "HealthcareService.identifier"
 * typ -> "HealthcareService.type"
-* remisskrav -> "HealthcareService.extension[referralRequired].valueBoolean"
+* remisskrav -> "HealthcareService.eligibility.code" // if code == #referralRequired
 * motesform -> "HealthcareService.extension[encounterMeans].valueCoding"
 * beskrivning -> "HealthcareService.name"
 // tid under vilken tjänsten är tillgänglig, extension!

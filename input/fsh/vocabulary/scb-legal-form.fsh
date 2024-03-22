@@ -2,6 +2,9 @@
 CodeSystem: SCBLegalFormCodeSystem
 Id: scb-legal-form-code-system
 Title: "JURFORM"
+Description: "Code system JURFORM"
+* ^experimental = false
+* ^caseSensitive = false
 * #10	"Fysiska personer"
 * #21	"Enkla bolag"
 * #22	"Partrederier"

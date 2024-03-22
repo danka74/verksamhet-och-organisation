@@ -27,15 +27,6 @@ Title: "VOK extension for organization ownership type"
 * value[x] only Coding
 * valueCoding from SCBOwnershipValueSet (required)
 
-Extension: VOKHealthcareServiceReferralRequiredExtension
-Id: vok-healthcare-service-referral-required-extension
-Title: "VOK extension for whether health care services require referral or not (yes=true, no=false)"
-* ^status = #active
-* ^experimental = false
-* ^context[0].type = #element
-* ^context[0].expression = "HealthcareService"
-* value[x] only boolean
-
 Extension: VOKHealthcareServiceEncounterMeansExtension
 Id: vok-healthcare-service-encounter-means-extension
 Title: "VOK extension for healthcare service means of encounter (e.g. physical, virtual)"

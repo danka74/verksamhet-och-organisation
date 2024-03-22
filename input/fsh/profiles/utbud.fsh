@@ -7,7 +7,6 @@ Description: "text"
 * type 1..1 MS
 * category 0..*
 * name 0..1 MS // beskrivning? 0..*
-* extension contains VOKHealthcareServiceReferralRequiredExtension named referralRequired 1..1 MS
 * extension contains VOKHealthcareServiceEncounterMeansExtension named encounterMeans 1..1 MS
 * availableTime 0..* MS
 * notAvailable 0..* MS

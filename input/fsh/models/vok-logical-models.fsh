@@ -17,7 +17,7 @@ Characteristics: #can-be-target
 * optionForlangning 1..1 string "optionFörlängning" // Sträng
 * beskrivning 1..1 string "beskrivning" // Sträng
 * avser 0..* Reference(VOKUppdragLogical) "avser"
-* relationAvtal 0..* Reference(VOKAvtalLogical) ""
+* relationAvtal 0..* Reference(VOKAvtalLogical) "relaterat avtal"
 
 
 Logical: VOKAvtalssambandLogical
