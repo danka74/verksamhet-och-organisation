@@ -4,7 +4,7 @@ Title: "VOKEligibilityCodeSystem"
 Description: "Code system for eligiblity of healthcare service"
 * ^experimental = false
 * ^caseSensitive = true
-* #referralRequired
+* #referralRequired "Referral required" "A referral is required to use this service"
 
 ValueSet: VOKEligibilityCharacteristicsValueset
 Id: vok-eligibility-characteristics-valueset
