@@ -13,4 +13,6 @@ Description: "Organization profile for VOK"
 * extension contains VOKOrganizationLegalFormExtension named legalForm 1..1 MS
 * extension contains VOKOrganizationOwnershipExtension named ownershipType 1..1 MS
 * partOf 0..1 MS
-* partOf only Reference(VOKOrganization)
+* partOf only Reference(VOKOrganization) // "Definition av partOf för VOKen"
+// * additionalPartOf extension med Reference(VOKOrganization) och kodad typ
+// verksamhet ?

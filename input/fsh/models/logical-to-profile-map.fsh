@@ -63,8 +63,8 @@ Target: "VOKContract"
 * typ -> "Contract.subType" // upphandlingskodverk
 * avser -> "Contract.topicReference(VOKUppdragLogical)"
 * url -> "Contract.legal.contentAttechment.url"
-// * giltigFrom 1..1 dateTime "giltigFrom" // Datum
-// * giltigTom 0..1 dateTime "giltigTom" // Datum
+* giltigFrom -> "Contract.applies.start"
+* giltigTom -> "Contract.applies.end"
 * optionForlangning -> "Contract.term.offer.text" // Sträng
 
 Mapping: VOKVerksamhetLogicalToProfile
