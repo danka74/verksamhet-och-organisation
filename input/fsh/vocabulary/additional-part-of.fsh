@@ -2,6 +2,8 @@ CodeSystem: VOKOrganizationAdditionalPartOfTypeCodeSystem
 Id: vok-organization-additional-part-of-type-code-system
 Title: "VOK Organization Additional PartOf Type CodeSystem"
 Description: "text"
+* ^experimental = false
+* ^caseSensitive = true
 * #ownedBy "Owner" "This organization is owned by the referenced organization"
 
 ValueSet: VOKOrganizationAdditionalPartOfTypeValueSet
