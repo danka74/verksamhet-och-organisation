@@ -3,6 +3,7 @@ Parent: HealthcareService
 Id: vok-healthcare-service
 Title: "VOK vård- och omsorgstjänst"
 Description: "text"
+* ^status = #active
 * identifier 1..* MS
 * type 1..1 MS
 * category 0..*

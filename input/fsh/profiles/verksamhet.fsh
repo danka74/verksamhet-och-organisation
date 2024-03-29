@@ -3,6 +3,7 @@ Parent: HealthcareService
 Id: VOKVerksamhet
 Title: "VOKVerksamhet"
 Description: """arbete som fortlöpande utförs i linje med viss övergripande inriktning"""
+* ^status = #active
 * providedBy 1..1 MS
 * providedBy only Reference(VOKOrganization)
 * category 1..1 MS // utbud vs. verksamhetstyp??

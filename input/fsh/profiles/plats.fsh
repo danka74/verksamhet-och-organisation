@@ -3,6 +3,7 @@ Parent: Location
 Id: vok-location
 Title: "VOK plats"
 Description: "text"
+* ^status = #active
 * identifier 1..* MS
 * name MS
 * description 0..1 MS

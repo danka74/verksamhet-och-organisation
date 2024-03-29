@@ -3,6 +3,7 @@ Parent: http://hl7.se/fhir/ig/base/StructureDefinition/SEBaseOrganization
 Id: vok-organization
 Title: "VOK organization"
 Description: "Organization profile for VOK"
+* ^status = #active
 * identifier 1..* MS
 * type 0..* MS // skulle behövas en slice på type för olika kodverk
 * extension contains VOKOrganizationActiveStatusExtension named organizationActive 1..1 MS

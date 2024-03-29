@@ -3,6 +3,7 @@ Parent: OrganizationAffiliation
 Id: vok-organization-affiliation
 Title: "VOK uppdrag"
 Description: "text"
+* ^status = #active
 * organization 1..1 MS
 * organization only Reference(VOKOrganization)
 * participatingOrganization 1..1 MS
