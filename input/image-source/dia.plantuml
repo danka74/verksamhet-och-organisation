@@ -1,0 +1,6 @@
+@startuml dia
+class VOKOrganization {
+    identifier 1..* : Identifier
+}
+
+@enduml

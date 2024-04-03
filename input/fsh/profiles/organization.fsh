@@ -1,7 +1,7 @@
 Profile: VOKOrganization
 Parent: http://hl7.se/fhir/ig/base/StructureDefinition/SEBaseOrganization
 Id: vok-organization
-Title: "VOK organization"
+Title: "VOK Organization"
 Description: "Organization profile for VOK"
 * identifier 1..* MS
 * type 0..* MS // skulle behövas en slice på type för olika kodverk
