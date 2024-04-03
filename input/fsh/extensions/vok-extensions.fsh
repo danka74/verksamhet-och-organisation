@@ -56,3 +56,12 @@ Context: Organization
 * extension[additionalPartOf].value[x] only Reference(VOKOrganization)
 * extension[additionalPartOfType].value[x] only Coding
 * extension[additionalPartOfType].valueCoding from VOKOrganizationAdditionalPartOfTypeValueSet (required)
+
+Extension: VOKHealthcareServicePeriod
+Id: vok-healthcare-service-period
+Title: "VOKHealthcareServicePeriod"
+Description: "Extension for the period during which the service is available and offered"
+Context: HealthcareService
+* ^status = #active
+* ^experimental = false
+* valueRange 1..1
