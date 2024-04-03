@@ -1,8 +1,8 @@
 Profile: VOKHealthcareService
 Parent: HealthcareService
 Id: vok-healthcare-service
-Title: "VOK vård- och omsorgstjänst"
-Description: "text"
+Title: "VOK Service"
+Description: "A service provided by an organization"
 * identifier 1..* MS
 * type 1..1 MS
 * category 0..*

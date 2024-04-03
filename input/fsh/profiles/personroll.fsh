@@ -1,7 +1,7 @@
 Profile: VOKPractitioner
 Parent: http://hl7.se/fhir/ig/base/StructureDefinition/SEBasePractitioner
 Id: vok-practitioner
-Title: "VOK vård- och omsorgspersonal"
+Title: "VOK Practitioner"
 Description: "text"
 * identifier 1..* MS
 * name 1..1 MS
@@ -11,7 +11,7 @@ Description: "text"
 Profile: VOKPractitionerRole
 Parent: http://hl7.se/fhir/ig/base/StructureDefinition/SEBasePractitionerRole
 Id: cok-practitioner-role
-Title: "VOK personalroll"
+Title: "VOK PractitionerRole"
 Description: "text"
 * organization 1..1 MS
 * organization only Reference(VOKOrganization)

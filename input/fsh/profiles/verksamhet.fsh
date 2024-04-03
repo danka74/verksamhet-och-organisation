@@ -1,7 +1,7 @@
 Profile: VOKVerksamhet
 Parent: HealthcareService
 Id: VOKVerksamhet
-Title: "VOKVerksamhet"
+Title: "VOK Business"
 Description: """arbete som fortlöpande utförs i linje med viss övergripande inriktning"""
 * providedBy 1..1 MS
 * providedBy only Reference(VOKOrganization)

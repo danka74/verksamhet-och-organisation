@@ -1,8 +1,9 @@
 Profile: VOKOrganizationAffiliation
 Parent: OrganizationAffiliation
 Id: vok-organization-affiliation
-Title: "VOK uppdrag"
-Description: "text"
+Title: "VOK OrganizationAffiliation"
+Description: """Representation of an assigned commission from a client/customer organization to 
+    a performing organization related to a certain service."""
 * organization 1..1 MS
 * organization only Reference(VOKOrganization)
 * participatingOrganization 1..1 MS

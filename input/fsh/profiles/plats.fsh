@@ -1,7 +1,7 @@
 Profile: VOKLocation
 Parent: Location
 Id: vok-location
-Title: "VOK plats"
+Title: "VOK Location"
 Description: "text"
 * identifier 1..* MS
 * name MS
