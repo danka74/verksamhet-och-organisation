@@ -2,7 +2,6 @@ Profile: VOKPractitioner
 Parent: http://hl7.se/fhir/ig/base/StructureDefinition/SEBasePractitioner
 Id: vok-practitioner
 Title: "VOK Practitioner"
-Title: "VOK Practitioner"
 Description: "text"
 * ^status = #active
 * identifier 1..* MS
