@@ -3,6 +3,7 @@ Parent: Contract
 Id: vok-contract
 Title: "VOK Contract"
 Description: "Contract profile for VOK"
+* ^status = #active
 * identifier 1..* MS
 * subject 1..* MS
 * subject only Reference(VOKOrganizationAffiliation)
