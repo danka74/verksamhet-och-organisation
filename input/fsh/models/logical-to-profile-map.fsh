@@ -30,17 +30,17 @@ Target: "VOKHealthcareService"
 * remisskrav -> "HealthcareService.eligibility.code" // if code == #referralRequired
 * motesform -> "HealthcareService.extension[encounterMeans].valueCoding"
 * beskrivning -> "HealthcareService.name"
-// tid under vilken tjänsten är tillgänglig, extension!
-// * giltigFrom -> "HealthcareService"
-// * giltigTom 0..1 dateTime "giltigTom" // Datum
+* giltigFrom -> "HealthcareService.extension[period].valuePeriod.start"
+* giltigTom -> "HealthcareService.extension[period].valuePeriod.end"
 
 Mapping: VOKMalgruppLogicalToProfile
 Source: VOKMalgruppLogical
 Target: "VOKHealthcareService"
+* kod -> "HealthcareService.eligibility.code"
 * beskrivning -> "HealthcareService.eligibility.comment"
-* alderMin -> "HealthcareService.eligibility[ageRange].extension[eligibilityValue].valueRange.low"
-* alderMax -> "HealthcareService.eligibility[ageRange].extension[eligibilityValue].valueRange.high"
-* kon -> "HealthcareService.eligibility[sex].extension[eligibilityValue].valueCoding"
+* alderMin -> "HealthcareService.eligibility.where(code = #424144002).extension[eligibilityValue].valueRange.low"
+* alderMax -> "HealthcareService.eligibility.where(code = #424144002).extension[eligibilityValue].valueRange.high"
+* kon -> "HealthcareService.eligibility.where(code = #184100006).extension[eligibilityValue].valueCoding"
 
 Mapping: VOKUppdragLogicalToProfile
 Source: VOKUppdragLogical
