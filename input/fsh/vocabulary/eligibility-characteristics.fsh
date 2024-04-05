@@ -5,6 +5,7 @@ Description: "Code system for eligiblity of healthcare service"
 * ^experimental = false
 * ^caseSensitive = true
 * #referralRequired "Referral required" "A referral is required to use this service"
+* #otherDescription "Other description" "Used for unstructured descriptions of the eligibility together with the eligibility.comment element."
 
 ValueSet: VOKEligibilityCharacteristicsValueset
 Id: vok-eligibility-characteristics-valueset
