@@ -27,7 +27,7 @@ Source: VOKVardOchOmsorgstjanstLogical
 Target: "VOKHealthcareService"
 * id -> "HealthcareService.identifier"
 * typ -> "HealthcareService.type"
-* remisskrav -> "HealthcareService.eligibility.where(code = #referralRequired).code.exists()"
+* remisskrav -> "HealthcareService.eligibility.code" // if code == #referralRequired
 * motesform -> "HealthcareService.extension[encounterMeans].valueCoding"
 * beskrivning -> "HealthcareService.name"
 * giltigFrom -> "HealthcareService.extension[period].valuePeriod.start"

@@ -18,27 +18,15 @@ Description: "Code system for type of referral required for a healthcare service
 * #regionReferral "Region referral" "Definition..."
 * #professionReferral "Profession referral" "Defintion..."
 
-ValueSet: VOKTargetGroupEligibilityCharacteristicsValueset
-Id: vok-target-group-eligibility-characteristics-valueset
-Title: "VOK target group eligibility characteristics valueset"
-Description: "Value set for target group eligibility characteristics"
+ValueSet: VOKEligibilityCharacteristicsValueset
+Id: vok-eligibility-characteristics-valueset
+Title: "VOK Eligibility characteristics valueset"
+Description: "Value set for eligibility characteristics"
+* include codes from system VOKEligibilityCodeSystem
 * $SCT#424144002 "aktuell kronologisk ålder"
 * $SCT#184100006 "patientens kön"
 * $SCT#60621009 "BMI"
 * $SCT#302132005 "ASA-klass"
-
-ValueSet: VOKConditionEligibilityCharacteristicsValueset
-Id: vok-condition-eligibility-characteristics-valueset
-Title: "VOK condition eligibility characteristics valueset"
-Description: "Value set for condition eligibility characteristics"
-* include codes from system VOKEligibilityCodeSystem
-
-ValueSet: VOKEligibilityCharacteristicsValueset
-Id: vok-eligibility-characteristics-valueset
-Title: "VOK eligibility characteristics valueset"
-Description: "Value set for eligibility characteristics"
-* include codes from valueset VOKTargetGroupEligibilityCharacteristicsValueset
-* include codes from valueset VOKConditionEligibilityCharacteristicsValueset
 
 ValueSet: VOKReferralTypeValueSet
 Id: VOKReferralTypeValueSet

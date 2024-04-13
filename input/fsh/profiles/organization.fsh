@@ -12,7 +12,7 @@ Description: "Organization profile for VOK"
 * extension[period].valuePeriod.start 1..1 MS
 * extension[period].valuePeriod.end 0..1 MS
 * extension contains VOKOrganizationLegalFormExtension named legalForm 1..1 MS
-* extension contains VOKOrganizationOwnershipExtension named ownershipType 0..1 MS
+* extension contains VOKOrganizationOwnershipExtension named ownershipType 1..1 MS
 * partOf 0..1 MS
 * partOf only Reference(VOKOrganization)
 * partOf ^short = "Definition av partOf för VOKen"

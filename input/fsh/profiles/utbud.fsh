@@ -12,6 +12,11 @@ Description: "A service provided by an organization"
 * extension contains VOKHealthcareServicePeriod named period 1..1 MS
 * availableTime 0..* MS
 * notAvailable 0..* MS
+// * eligibility ^slicing.discriminator.type = #value
+// * eligibility ^slicing.discriminator.path = "code"
+// * eligibility ^slicing.rules = #open
+// * eligibility ^slicing.description = "Slice based on eligibility.code value"
+// * eligibility ^slicing.ordered = false
 * eligibility 0..* MS
 * eligibility.extension contains VOKEligibilityValueExtension named eligibilityValue 0..1 MS
 * eligibility.code from VOKEligibilityCharacteristicsValueset (extensible)
@@ -26,7 +31,7 @@ Description: "A service provided by an organization"
 Profile: VSHealthCareService
 Parent: VOKHealthcareService
 Id: VSHealthCareService
-Title: "VS HealthCare Service"
+Title: "VSHealthCareService"
 Description: "A service provided by an organization, constrained for Vårdsök project"
 * eligibility ^slicing.discriminator.type = #value
 * eligibility ^slicing.discriminator.path = "code"
