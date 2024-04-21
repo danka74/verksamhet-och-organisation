@@ -9,7 +9,7 @@ Description: "A service provided by an organization"
 * category 0..*
 * name 0..1 MS // beskrivning? 0..*
 * extension contains VOKHealthcareServiceEncounterMeansExtension named encounterMeans 1..1 MS
-* extension contains VOKHealthcareServicePeriod named period 1..1 MS
+* extension contains VOKHealthcareServicePeriodExtension named period 1..1 MS
 * availableTime 0..* MS
 * notAvailable 0..* MS
 // * eligibility ^slicing.discriminator.type = #value
