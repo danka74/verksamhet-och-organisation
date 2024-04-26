@@ -1,5 +1,5 @@
 
-CodeSystem: SCBLegalFormCodeSystem
+CodeSystem: SkatteverketLegalFormCodeSystem
 Id: scb-legal-form-code-system
 Title: "JURFORM"
 Description: "Code system JURFORM"
@@ -38,5 +38,5 @@ Description: "Code system JURFORM"
 * #98	"Övr sv jur pers, enl särsk lag"
 * #99	"Juridisk form ej utredd"
 
-ValueSet: SCBLegalFormValueSet
-* include codes from system SCBLegalFormCodeSystem
+ValueSet: SkatteverketLegalFormValueSet
+* include codes from system SkatteverketLegalFormCodeSystem

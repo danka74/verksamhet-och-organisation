@@ -15,7 +15,7 @@ Context: Organization
 * ^status = #active
 * ^experimental = false
 * value[x] only Coding
-* valueCoding from SCBLegalFormValueSet (required)
+* valueCoding from SkatteverketLegalFormValueSet (required)
 
 Extension: VOKOrganizationOwnershipExtension
 Id: vok-organization-ownership-extension
