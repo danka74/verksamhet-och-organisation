@@ -8,6 +8,7 @@ Description: "A service provided by an organization"
 * type 1..1 MS
 * category 0..*
 * name 0..1 MS // beskrivning? 0..*
+* comment 0..1 MS
 * extension contains VOKHealthcareServiceEncounterMeansExtension named encounterMeans 1..1 MS
 * extension contains VOKHealthcareServicePeriodExtension named period 1..1 MS
 * availableTime 0..* MS
