@@ -44,4 +44,5 @@ Description: "Code system JURFORM"
 * #99 "Juridisk form ej utredd"
 
 ValueSet: SkatteverketLegalFormValueSet
+* ^status = #active
 * include codes from system SkatteverketLegalFormCodeSystem

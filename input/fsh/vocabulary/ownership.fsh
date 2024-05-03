@@ -7,6 +7,7 @@ Description: "Code system ÄGAR2020"
 // HSA använder OID 1.2.752.129.2.2.1.14
 * ^experimental = false
 * ^caseSensitive = false
+* ^status = #active
 * #10 "Statligt kontrollerade enheter" // 10 eller 1? finns i HSA
 * #20 "Kommunalt kontrollerade enheter" // 20 eller 2? finns i HSA men som substantiv
 * #30 "Regionkontrollerade enheter" // 30 eller 3? Landsting vs. region
@@ -17,4 +18,5 @@ Description: "Code system ÄGAR2020"
 
 
 ValueSet: SCBOwnershipValueSet
+* ^status = #active
 * include codes from system SCBOwnershipCodeSystem
