@@ -12,7 +12,6 @@ Description: """Representation of an assigned commission from a client/customer 
 * healthcareService 1..1 MS
 * healthcareService only Reference(VOKHealthcareService)
 * code 1..* MS
-// * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-OrganizationAffiliation.contact named contact 0..1 MS
 * telecom.extension contains VOKOrganizationAffiliationTelecomNameExtension named name 0..1 MS and
-    VOKOrganizationAffiliationTelecomAddressExtension named address 0..1 MS and
+    // VOKOrganizationAffiliationTelecomAddressExtension named address 0..1 MS and
     VOKOrganizationAffiliationTelecomPurposeExtension named purpose 0..1 MS
