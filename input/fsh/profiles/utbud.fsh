@@ -29,10 +29,10 @@ Description: "A service provided by an organization"
 * providedBy only Reference(VOKOrganization)
 
 
-Profile: VSHealthCareService
+Profile: VSHealthcareService
 Parent: VOKHealthcareService
-Id: VSHealthCareService
-Title: "VSHealthCareService"
+Id: vs-healthcare-service
+Title: "VS HealthcareService"
 Description: "A service provided by an organization, constrained for Vårdsök project"
 * eligibility ^slicing.discriminator.type = #value
 * eligibility ^slicing.discriminator.path = "code"
