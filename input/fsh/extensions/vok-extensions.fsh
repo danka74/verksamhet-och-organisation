@@ -45,7 +45,7 @@ Description: "VOK extension for HealthcareService eligibility value"
 Context: HealthcareService.eligibility
 * ^status = #active
 * ^experimental = false
-* value[x] 1..1
+* valueReference 1..1
 
 Extension: VOKOrganizationAdditionalPartOfExtension
 Id: vok-organization-additional-part-of-extension
