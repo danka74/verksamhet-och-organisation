@@ -25,10 +25,10 @@ Id: vok-target-group-eligibility-characteristics-valueset
 Title: "VOK Target Group Eligibility characteristics valueset"
 Description: "Value set for target group eligibility characteristics"
 * ^status = #active
-* $SCT#424144002 "aktuell kronologisk ålder"
-* $SCT#184100006 "patientens kön"
-* $SCT#60621009 "BMI"
-* $SCT#302132005 "ASA-klass"
+* $SCTSE#424144002 "aktuell kronologisk ålder"
+* $SCTSE#184100006 "patientens kön"
+* $SCTSE#60621009 "BMI"
+* $SCTSE#302132005 "ASA-klass"
 
 ValueSet: VOKEligibilityConditionCharacteristicsValueset
 Id: vok-eligibility-condition-characteristics-valueset
