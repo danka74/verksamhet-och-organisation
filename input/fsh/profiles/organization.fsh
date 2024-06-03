@@ -6,7 +6,7 @@ Description: "Organization profile for VOK"
 * ^status = #active
 * identifier 1..* MS
 * type 0..* MS // skulle behövas en slice på type för olika kodverk
-* extension contains VOKOrganizationActiveStatusExtension named organizationActive 1..1 MS
+* extension contains VOKOrganizationActiveStatusExtension named organizationActive 0..1 MS
 * extension contains http://hl7.org/fhir/StructureDefinition/organization-period named period 1..1 MS
 * extension[period].valuePeriod.start 1..1 MS
 * extension[period].valuePeriod.end 0..1 MS
