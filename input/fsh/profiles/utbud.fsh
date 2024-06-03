@@ -13,19 +13,13 @@ Description: "A service provided by an organization"
 * extension contains VOKHealthcareServicePeriodExtension named period 1..1 MS
 * availableTime 0..* MS
 * notAvailable 0..* MS
-// * eligibility ^slicing.discriminator.type = #value
-// * eligibility ^slicing.discriminator.path = "code"
-// * eligibility ^slicing.rules = #open
-// * eligibility ^slicing.description = "Slice based on eligibility.code value"
-// * eligibility ^slicing.ordered = false
 * eligibility 0..* MS
 * eligibility.extension contains VOKEligibilityValueExtension named eligibilityValue 0..1 MS
 * eligibility.extension[eligibilityValue].valueReference only Reference(VOKEligibilityGroup)
-// * eligibility.code from VOKEligibilityCharacteristicsValueset (extensible)
-// * eligibility.code 1..1 MS
 * location 0..* MS
 * location only Reference(VOKLocation)
 * telecom 0..* MS
+* extension contains VOKContactExtension named contact 0..1 MS
 * providedBy 0..1 MS
 * providedBy only Reference(VOKOrganization)
 

@@ -70,11 +70,11 @@ Context: HealthcareService
 * ^experimental = false
 * valueRange 1..1
 
-Extension: VOKOrganizationAffiliationContactExtension
-Id: vok-organization-affiliation-contact-extension
-Title: "VOKOrganizationAffiliationContactExtension"
-Description: "Extension to add R5 ExtendedContactDetail element name to R4"
-Context: OrganizationAffiliation.telecom
+Extension: VOKContactExtension
+Id: vok-contact-extension
+Title: "VOKContactExtension"
+Description: "Extension to add R5 ExtendedContactDetail data type to R4"
+Context: OrganizationAffiliation, HealthcareService
 * ^status = #active
 * ^experimental = false
 * extension contains purpose 0..1 and 
@@ -85,7 +85,7 @@ Context: OrganizationAffiliation.telecom
     period 0..1
 * extension[purpose] ^short = "The type of contact"
 * extension[purpose].value[x] only CodeableConcept
-* extension[purpose].valueCodeableConcept from VOKOrganizationAffiliationContactPurposeValueSet
+* extension[purpose].valueCodeableConcept from VOKContactPurposeValueSet
 * extension[name] ^short = "Name of an individual to contact"
 * extension[name].value[x] only HumanName
 * extension[telecom] ^short = "Contact details (e.g.phone/fax/url)"

@@ -9,7 +9,7 @@ Description: """Representation of an assigned commission from a client/customer 
 * organization only Reference(VOKOrganization)
 * participatingOrganization 1..1 MS
 * participatingOrganization only Reference(VOKOrganization)
-* healthcareService 1..1 MS
+* healthcareService 1..* MS
 * healthcareService only Reference(VOKHealthcareService)
 * code 1..* MS
-* extension contains VOKOrganizationAffiliationContactExtension named contact 0..1 MS
+* extension contains VOKContactExtension named contact 0..1 MS

@@ -7,9 +7,9 @@ Description: "Code system to represent contact purposes"
 * ^status = #active
 * #contractPerformerContact "Person at performing organization to contact regarding contract"
 
-ValueSet: VOKOrganizationAffiliationContactPurposeValueSet
-Id: VOKOrganizationAffiliationContactPurposeValueSet
-Title: "VOKOrganizationAffiliationContactPurposeValueSet"
+ValueSet: VOKContactPurposeValueSet
+Id: vok-contact-purpose-value-set
+Title: "VOKContactPurposeValueSet"
 Description: "Value set for purpose of contact"
 * ^status = #active
 * include codes from system VOKContactPurposeCodeSystem
