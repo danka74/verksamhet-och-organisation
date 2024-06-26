@@ -46,20 +46,21 @@ Context: HealthcareService.eligibility
 * ^status = #active
 * ^experimental = false
 * valueReference 1..1
+* valueReference only Reference(VOKEligibilityGroup)
 
-Extension: VOKOrganizationAdditionalPartOfExtension
-Id: vok-organization-additional-part-of-extension
-Title: "VOKOrganizationAdditionalPartOfExtension"
+Extension: VOKOrganizationAdditionalRelationshipExtension
+Id: vok-organization-additional-relationship-extension
+Title: "VOKOrganizationAdditionalRelationshipExtension"
 Description: "Extension for an additional partOf to represent additional organizational structure"
 Context: Organization
 * ^status = #active
 * ^experimental = false
 * extension contains
-    additionalPartOf 1..1 and
-    additionalPartOfType 1..1
-* extension[additionalPartOf].value[x] only Reference(VOKOrganization)
-* extension[additionalPartOfType].value[x] only Coding
-* extension[additionalPartOfType].valueCoding from VOKOrganizationAdditionalPartOfTypeValueSet (required)
+    additionalRelationship 1..1 and
+    additionalRelationshipType 1..1
+* extension[additionalRelationship].value[x] only Reference(VOKOrganization)
+* extension[additionalRelationshipType].value[x] only Coding
+* extension[additionalRelationshipType].valueCoding from VOKOrganizationAdditionalRelationshipTypeValueSet (required)
 
 Extension: VOKHealthcareServicePeriodExtension
 Id: vok-healthcare-service-period-extension
