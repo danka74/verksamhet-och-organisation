@@ -2,10 +2,11 @@ Mapping: VOKOrganizationLogicalToProfile
 Source: VOKOrganisationLogical
 Target: "VOKOrganization"
 * id -> "Organization.identifier"
+* id -> "Organization.id"
 * giltigFrom -> "Organization.extension[period].valuePeriod.start"
 * giltigTom -> "Organization.extension[period].valuePeriod.end"
 * juridiskForm -> "Organization.extension[legalForm]"
-* foretagsnamn -> "Organization.name"
+* namn -> "Organization.name"
 * alias -> "Organization.alias"
 * status -> "Organization.extension[organizationActive].valueBoolean"
 * agarkategori -> "Organization.extension[ownershipType].valueCoding"
@@ -23,11 +24,10 @@ Target: "VOKOrganization"
 * typ -> "Organization.type" 
 
 Mapping: VOKVardOchOmsorgstjanstLogicalToProfile
-Source: VOKVardOchOmsorgstjanstLogical
+Source: VOKTjanstLogical
 Target: "VOKHealthcareService"
 * id -> "HealthcareService.identifier"
 * typ -> "HealthcareService.type"
-* remisskrav -> "HealthcareService.eligibility.code" // if code == #referralRequired
 * motesform -> "HealthcareService.extension[encounterMeans].valueCoding"
 * beskrivning -> "HealthcareService.name"
 * giltigFrom -> "HealthcareService.extension[period].valuePeriod.start"
@@ -35,12 +35,11 @@ Target: "VOKHealthcareService"
 
 Mapping: VOKMalgruppLogicalToProfile
 Source: VOKMalgruppLogical
-Target: "VOKHealthcareService"
-* kod -> "HealthcareService.eligibility.code"
-* beskrivning -> "HealthcareService.eligibility.comment"
-* alderMin -> "HealthcareService.eligibility.where(code = #424144002).extension[eligibilityValue].valueRange.low"
-* alderMax -> "HealthcareService.eligibility.where(code = #424144002).extension[eligibilityValue].valueRange.high"
-* kon -> "HealthcareService.eligibility.where(code = #184100006).extension[eligibilityValue].valueCoding"
+Target: "VOKEligibilityGroup"
+// * kod - vad ska den bindas till? ska den vara med?
+* vardeKod -> "Group.characteristic.code"
+* beskrivning -> "Group.text"
+// * vardeMax värdet i FHIR är value[x] som kan vara t.ex. en kod, ett intervall etc.
 
 Mapping: VOKUppdragLogicalToProfile
 Source: VOKUppdragLogical
@@ -59,8 +58,7 @@ Mapping: VOKAvtalLogicalToProfile
 Source: VOKAvtalLogical
 Target: "VOKContract"
 * id -> "Contract.identifier"
-* kategori -> "Contract.type" // lagrum
-* typ -> "Contract.subType" // upphandlingskodverk
+* typ -> "Contract.type"
 * avser -> "Contract.topicReference(VOKUppdragLogical)"
 * url -> "Contract.legal.contentAttechment.url"
 * giltigFrom -> "Contract.applies.start"

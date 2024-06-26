@@ -14,8 +14,7 @@ Characteristics: #can-be-target
 * url 0..1 url "url" // URL
 * giltigFrom 1..1 time "giltigFrom" // Tidpunkt
 * giltigTom 0..1 time "giltigTom" // Tidpunkt
-* kategori 1..1 Coding "kategori" // Kod
-* optionForlangning 1..1 string "optionFörlängning" // Sträng
+* optionForlangning 0..1 string "optionFörlängning" // Sträng
 * beskrivning 1..1 string "beskrivning" // Sträng
 * avser 0..* Reference(VOKUppdragLogical) "avser"
 * avser ^definition = "avser"
@@ -42,6 +41,7 @@ Characteristics: #can-be-target
 * syfte 1..1 Coding "syfte" // Kod
 * adressrad 0..* string "adress.rad" // Sträng
 * adresspostnummer 0..1 string "adress.postnummer" // Sträng
+* adresspostort 0..1 string "adress.postort" // Sträng
 * adressland 0..1 string "adress.land" // Sträng
 * giltigFrom 1..1 time "giltigFrom" // Tidpunkt
 * giltigTom 0..1 time "giltigTom" // Tidpunkt
@@ -55,6 +55,14 @@ Characteristics: #can-be-target
 * harTillganglighetsavvikelse ^definition = "harTillganglighetsavvikelse"
 
 
+Logical: VOKKvalifikationLogical
+Parent: Base
+Id: VOKKvalifikationLogical
+Title: "Kvalifikation"
+Description: "Kvalifikation logical model"
+Characteristics: #can-be-target
+
+
 Logical: VOKMalgruppLogical
 Parent: Base
 Id: VOKMalgruppLogical
@@ -63,9 +71,9 @@ Description: "Målgrupp logical model"
 Characteristics: #can-be-target
 * kod 1..1 Coding "kod" // Kod
 * beskrivning 1..1 string "beskrivning" // Sträng
-* alderMin 0..1 integer "ålderMin" // Heltal
-* alderMax 0..1 integer "ålderMax" // Heltal
-* kon 1..1 Coding "kön" // Kod
+* vardeMin 0..1 integer "värde.Min" // Heltal
+* vardeMax 0..1 integer "värde.Max" // Heltal
+* vardeKod 0..1 Coding "värde.Kod" // Kod
 
 
 Logical: VOKOrganisationLogical
@@ -75,16 +83,18 @@ Title: "Organisation"
 Description: "Organisation logical model"
 Characteristics: #can-be-target
 * id 1..* string "id" // Identitet
-* typ 1..1 Coding "typ" // Kod
-* status 1..1 Coding "status" // Kod
-* foretagsnamn 1..1 string "företagsnamn" // Sträng
+* typ 1..* Coding "typ" // Kod
+* status 1..1 boolean "status" // Bool
+* namn 1..1 string "namn" // Sträng
 * alias 0..* string "alias" // Sträng
 * juridiskForm 1..1 Coding "juridiskForm" // Kod
-* agarkategori 1..1 Coding "ägarkategori" // Kod
-* giltigFrom 0..1 time "giltigFrom" // Tidpunkt
+* agarkategori 0..1 Coding "ägarkategori" // Kod
+* giltigFrom 1..1 time "giltigFrom" // Tidpunkt
 * giltigTom 0..1 time "giltigTom" // Tidpunkt
 * relationOrganisation 0..* Reference(VOKOrganisationLogical) ""
 * relationOrganisation ^definition = "relationOrganisation"
+* relationKontaktuppgift 0..* Reference(VOKKontaktuppgiftLogical) ""
+* relationKontaktuppgift ^definition = "relationKontaktuppgift"
 
 
 Logical: VOKOrganisationSambandLogical
@@ -104,18 +114,18 @@ Description: "OrganisatoriskEnhet logical model"
 Characteristics: #can-be-target
 * id 1..* string "id" // Identitet
 * typ 0..* Coding "typ" // Kod
-* status 1..1 Coding "status" // Kod
+* status 1..1 boolean "status" // Bool
 * enhetsnamn 1..* string "enhetsnamn" // Sträng
 * alias 0..* string "alias" // Sträng
 * giltigFrom 1..1 time "giltigFrom" // Tidpunkt
 * giltigTom 0..1 time "giltigTom" // Tidpunkt
 * relationOrganisatoriskEnhet 0..* Reference(VOKOrganisatoriskEnhetLogical) ""
 * relationOrganisatoriskEnhet ^definition = "relationOrganisatoriskEnhet"
-* tillhor 1..1 Reference(VOKOrganisationLogical) "tillhör"
+* tillhor 0..1 Reference(VOKOrganisationLogical) "tillhör"
 * tillhor ^definition = "tillhor"
 * arBelagenPa 0..* Reference(VOKPlatsLogical) "är belägen på"
 * arBelagenPa ^definition = "arBelagenPa"
-* erbjuder 1..* Reference(VOKVardOchOmsorgstjanstLogical) "erbjuder"
+* erbjuder 0..* Reference(VOKTjanstLogical) "erbjuder"
 * erbjuder ^definition = "erbjuder"
 * harOppetUnder 0..* Reference(VOKTillganglighetstidLogical) "har öppet under"
 * harOppetUnder ^definition = "harOppetUnder"
@@ -138,7 +148,9 @@ Id: VOKPersonLogical
 Title: "Person"
 Description: "Person logical model"
 Characteristics: #can-be-target
+* id 0..1 string "id" // Identitet
 * namn 1..1 string "namn" // Sträng
+* skyddadIdentitet 0..1 Coding "skyddadIdentitet" // Kod
 * antar 0..* Reference(VOKPersonrollLogical) "antar"
 * antar ^definition = "antar"
 
@@ -156,10 +168,10 @@ Characteristics: #can-be-target
 * relationOrganisation ^definition = "relationOrganisation"
 * relationOrganisatoriskEnhet 0..1 Reference(VOKOrganisatoriskEnhetLogical) ""
 * relationOrganisatoriskEnhet ^definition = "relationOrganisatoriskEnhet"
-* relationAvtal 0..1 Reference(VOKAvtalLogical) ""
-* relationAvtal ^definition = "relationAvtal"
-* relationKontaktuppgift 0..1 Reference(VOKKontaktuppgiftLogical) ""
-* relationKontaktuppgift ^definition = "relationKontaktuppgift"
+* harDeltagande 0..1 Reference(VOKAvtalLogical) "har deltagande"
+* harDeltagande ^definition = "harDeltagande"
+* har 0..1 Reference(VOKKontaktuppgiftLogical) "har"
+* har ^definition = "har"
 
 
 Logical: VOKPlatsLogical
@@ -173,10 +185,11 @@ Characteristics: #can-be-target
 * beskrivning 0..* string "beskrivning" // Sträng
 * status 1..1 Coding "status" // Kod
 * platstyp 1..1 Coding "platstyp" // Kod
-* besoksadress 0..1 Address "besöksadress" // Besöksadress
-* kommunkod 1..1 Coding "kommunkod" // Kod
-* lanskod 1..1 Coding "länskod" // Kod
-* geografiskaKoordinater 3..* BackboneElement "geografiskaKoordinater" // GeografiskKoordinat
+* adressrad 0..1 string "adress.rad" // Sträng
+* adressland 0..1 string "adress.land" // Sträng
+* kommunkod 0..1 Coding "kommunkod" // Kod
+* lanskod 0..1 Coding "länskod" // Kod
+* geografiskaKoordinater 0..1 BackboneElement "geografiskaKoordinater" // GeografiskKoordinat
 * giltigFrom 1..1 time "giltigFrom" // Tidpunkt
 * giltigTom 0..1 time "giltigTom" // Tidpunkt
 * delAv 0..1 Reference(VOKPlatsLogical) "del av"
@@ -217,8 +230,32 @@ Characteristics: #can-be-target
 * starttid 0..1 time "starttid" // Tid
 * sluttid 0..1 time "sluttid" // Tid
 * veckodag 0..* Coding "veckodag" // Kod
-* finnsTillganglig 1..* Reference(VOKVardOchOmsorgstjanstLogical) "finns tillgänglig"
+* finnsTillganglig 1..* Reference(VOKTjanstLogical) "finns tillgänglig"
 * finnsTillganglig ^definition = "finnsTillganglig"
+
+
+Logical: VOKTjanstLogical
+Parent: Base
+Id: VOKTjanstLogical
+Title: "Tjänst"
+Description: "Tjänst logical model"
+Characteristics: #can-be-target
+* id 1..1 string "id" // Identitet
+* typ 1..1 Coding "typ" // Kod
+* motesform 1..* Coding "mötesform" // Kod
+* beskrivning 0..1 string "beskrivning" // Sträng
+* giltigFrom 1..1 time "giltigFrom" // Tidpunkt
+* giltigTom 0..1 time "giltigTom" // Tidpunkt
+* erbjudsPa 0..* Reference(VOKPlatsLogical) "erbjuds på"
+* erbjudsPa ^definition = "erbjudsPa"
+* har 0..* Reference(VOKKontaktuppgiftLogical) "har"
+* har ^definition = "har"
+* erbjudsTill 0..* Reference(VOKMalgruppLogical) "erbjuds till"
+* erbjudsTill ^definition = "erbjudsTill"
+* harTillganglighetsavvikelse 0..* Reference(VOKStorningsinformationLogical) "har tillgänglighetsavvikelse"
+* harTillganglighetsavvikelse ^definition = "harTillganglighetsavvikelse"
+* harSarskilda 0..* Reference(VOKVillkorLogical) "har särskilda"
+* harSarskilda ^definition = "harSarskilda"
 
 
 Logical: VOKUppdragLogical
@@ -227,16 +264,17 @@ Id: VOKUppdragLogical
 Title: "Uppdrag"
 Description: "Uppdrag logical model"
 Characteristics: #can-be-target
-* typ 1..1 Coding "typ" // Kod
-* beskrivning 1..1 string "beskrivning" // Sträng
+* typ 0..1 Coding "typ" // Kod
 * giltigFrom 1..1 time "giltigFrom" // Tidpunkt
 * giltigTom 0..1 time "giltigTom" // Tidpunkt
-* omfattar 0..* Reference(VOKVardOchOmsorgstjanstLogical) "omfattar"
+* omfattar 0..* Reference(VOKTjanstLogical) "omfattar"
 * omfattar ^definition = "omfattar"
 * harUtforare 1..1 Reference(VOKOrganisationLogical) "har utförare"
 * harUtforare ^definition = "harUtforare"
 * harBestallare 1..1 Reference(VOKOrganisationLogical) "har beställare"
 * harBestallare ^definition = "harBestallare"
+* relationTelekommunikation 0..* Reference(VOKTelekommunikationLogical) ""
+* relationTelekommunikation ^definition = "relationTelekommunikation"
 
 
 Logical: VOKVerksamhetLogical
@@ -250,24 +288,14 @@ Characteristics: #can-be-target
 * bedriver ^definition = "bedriver"
 
 
-Logical: VOKVardOchOmsorgstjanstLogical
+Logical: VOKVillkorLogical
 Parent: Base
-Id: VOKVardOchOmsorgstjanstLogical
-Title: "Vård- och omsorgstjänst"
-Description: "Vård- och omsorgstjänst logical model"
+Id: VOKVillkorLogical
+Title: "Villkor"
+Description: "Villkor logical model"
 Characteristics: #can-be-target
-* id 1..1 string "id" // Identitet
-* typ 1..1 Coding "typ" // Kod
-* remisskrav 1..1 boolean "remisskrav" // Bool
-* motesform 1..* Coding "mötesform" // Kod
-* beskrivning 0..* string "beskrivning" // Sträng
-* giltigFrom 1..1 time "giltigFrom" // Tidpunkt
-* giltigTom 0..1 time "giltigTom" // Tidpunkt
-* erbjudsPa 0..* Reference(VOKPlatsLogical) "erbjuds på"
-* erbjudsPa ^definition = "erbjudsPa"
-* har 0..* Reference(VOKKontaktuppgiftLogical) "har"
-* har ^definition = "har"
-* erbjudsTill 0..* Reference(VOKMalgruppLogical) "erbjuds till"
-* erbjudsTill ^definition = "erbjudsTill"
-* harTillganglighetsavvikelse 0..* Reference(VOKStorningsinformationLogical) "har tillgänglighetsavvikelse"
-* harTillganglighetsavvikelse ^definition = "harTillganglighetsavvikelse"
+* kod 1..1 Coding "kod" // Kod
+* beskrivning 1..1 string "beskrivning" // Sträng
+* vardeMin 0..1 integer "värde.Min" // Heltal
+* vardeMax 0..1 integer "värde.Max" // Heltal
+* vardeKod 0..1 Coding "värde.Kod" // Kod
