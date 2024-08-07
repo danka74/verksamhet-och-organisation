@@ -1,7 +1,7 @@
 {
     "package-id" : "ehalsomyndigheten.se.katalog",
     "version" : "0.1.0",
-    "path" : "http://ehalsomyndigheten.se/fhir/ndi/0.1.0",
+    "path" : "http://ehalsomyndigheten.se/fhir/sendi/0.1.0",
     "mode": "milestone",
     "status" : "trial-use",
     "sequence" : "STU 1",

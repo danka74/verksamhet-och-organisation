@@ -1,5 +1,5 @@
 @startuml dia
-class NDIOrganization {
+class SENDIOrganization {
     identifier 1..* : Identifier
 }
 

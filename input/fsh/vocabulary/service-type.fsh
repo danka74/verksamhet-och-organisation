@@ -1,6 +1,6 @@
-ValueSet: NDIServiceTypeValueSet
-Id: ndi-service-type-value-set
-Title: "NDI Service Type ValueSet"
+ValueSet: SENDIServiceTypeValueSet
+Id: sendi-service-type-value-set
+Title: "SENDI Service Type ValueSet"
 // Description: ""
 * ^status = #active
 * $SCTSE#1255914002 "brännskadevård"

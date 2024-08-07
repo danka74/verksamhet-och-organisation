@@ -1,56 +1,56 @@
-Extension: NDIOrganizationActiveStatusExtension
-Id: ndi-organization-active-status-extension
-Title: "NDIOrganizationActiveStatusExtension"
-Description: "NDI extension for organization status (active=true, inactive=false)"
+Extension: SENDIOrganizationActiveStatusExtension
+Id: sendi-organization-active-status-extension
+Title: "SENDIOrganizationActiveStatusExtension"
+Description: "SENDI extension for organization status (active=true, inactive=false)"
 Context: Organization
 * ^status = #active
 * ^experimental = false
 * value[x] only boolean
 
-Extension: NDIOrganizationLegalFormExtension
-Id: ndi-organization-legal-form-extension
-Title: "NDIOrganizationLegalFormExtension"
-Description: "NDI extension for organization legal form"
+Extension: SENDIOrganizationLegalFormExtension
+Id: sendi-organization-legal-form-extension
+Title: "SENDIOrganizationLegalFormExtension"
+Description: "SENDI extension for organization legal form"
 Context: Organization
 * ^status = #active
 * ^experimental = false
 * value[x] only Coding
 * valueCoding from SkatteverketLegalFormValueSet (required)
 
-Extension: NDIOrganizationOwnershipExtension
-Id: ndi-organization-ownership-extension
-Title: "NDIOrganizationOwnershipExtension"
-Description: "NDI extension for organization ownership type"
+Extension: SENDIOrganizationOwnershipExtension
+Id: sendi-organization-ownership-extension
+Title: "SENDIOrganizationOwnershipExtension"
+Description: "SENDI extension for organization ownership type"
 Context: Organization
 * ^status = #active
 * ^experimental = false
 * value[x] only Coding
 * valueCoding from SCBOwnershipValueSet (required)
 
-Extension: NDIHealthcareServiceEncounterMeansExtension
-Id: ndi-healthcare-service-encounter-means-extension
-Title: "NDIHealthcareServiceEncounterMeansExtension"
-Description: "NDI extension for healthcare service means of encounter (e.g. physical, virtual)"
+Extension: SENDIHealthcareServiceEncounterMeansExtension
+Id: sendi-healthcare-service-encounter-means-extension
+Title: "SENDIHealthcareServiceEncounterMeansExtension"
+Description: "SENDI extension for healthcare service means of encounter (e.g. physical, virtual)"
 Context: HealthcareService
 * ^status = #active
 * ^experimental = false
 * value[x] only Coding
-* valueCoding from NDIEncounterMeansValueSet (required)
+* valueCoding from SENDIEncounterMeansValueSet (required)
 
 // backported from 6.0.0-ci build
-Extension: NDIEligibilityValueExtension
-Id: ndi-eligibility-value-extension
-Title: "NDIEligibilityValueExtension"
-Description: "NDI extension for HealthcareService eligibility value"
+Extension: SENDIEligibilityValueExtension
+Id: sendi-eligibility-value-extension
+Title: "SENDIEligibilityValueExtension"
+Description: "SENDI extension for HealthcareService eligibility value"
 Context: HealthcareService.eligibility
 * ^status = #active
 * ^experimental = false
 * valueReference 1..1
-* valueReference only Reference(NDIEligibilityGroup)
+* valueReference only Reference(SENDIEligibilityGroup)
 
-Extension: NDIOrganizationAdditionalRelationshipExtension
-Id: ndi-organization-additional-relationship-extension
-Title: "NDIOrganizationAdditionalRelationshipExtension"
+Extension: SENDIOrganizationAdditionalRelationshipExtension
+Id: sendi-organization-additional-relationship-extension
+Title: "SENDIOrganizationAdditionalRelationshipExtension"
 Description: "Extension for an additional partOf to represent additional organizational structure"
 Context: Organization
 * ^status = #active
@@ -58,22 +58,22 @@ Context: Organization
 * extension contains
     additionalRelationship 1..1 and
     additionalRelationshipType 1..1
-* extension[additionalRelationship].value[x] only Reference(NDIOrganization)
+* extension[additionalRelationship].value[x] only Reference(SENDIOrganization)
 * extension[additionalRelationshipType].value[x] only Coding
-* extension[additionalRelationshipType].valueCoding from NDIOrganizationAdditionalRelationshipTypeValueSet (required)
+* extension[additionalRelationshipType].valueCoding from SENDIOrganizationAdditionalRelationshipTypeValueSet (required)
 
-Extension: NDIHealthcareServicePeriodExtension
-Id: ndi-healthcare-service-period-extension
-Title: "NDIHealthcareServicePeriodExtension"
+Extension: SENDIHealthcareServicePeriodExtension
+Id: sendi-healthcare-service-period-extension
+Title: "SENDIHealthcareServicePeriodExtension"
 Description: "Extension for the period during which the service is available and offered"
 Context: HealthcareService
 * ^status = #active
 * ^experimental = false
 * valueRange 1..1
 
-Extension: NDIContactExtension
-Id: ndi-contact-extension
-Title: "NDIContactExtension"
+Extension: SENDIContactExtension
+Id: sendi-contact-extension
+Title: "SENDIContactExtension"
 Description: "Extension to add R5 ExtendedContactDetail data type to R4"
 Context: OrganizationAffiliation, HealthcareService
 * ^status = #active
@@ -86,42 +86,42 @@ Context: OrganizationAffiliation, HealthcareService
     period 0..1
 * extension[purpose] ^short = "The type of contact"
 * extension[purpose].value[x] only CodeableConcept
-* extension[purpose].valueCodeableConcept from NDIContactPurposeValueSet
-* extension[name] ^short = "Name of an individual to contact"
+* extension[purpose].valueCodeableConcept from SENDIContactPurposeValueSet
+* extension[name] ^short = "Name of an isendividual to contact"
 * extension[name].value[x] only HumanName
 * extension[telecom] ^short = "Contact details (e.g.phone/fax/url)"
 * extension[telecom].value[x] only ContactPoint
 * extension[address] ^short = "Address for the contact"
 * extension[address].value[x] only Address
 * extension[organization] ^short = "This contact detail is handled/monitored by a specific organization"
-* extension[organization].value[x] only Reference(NDIOrganization) 
+* extension[organization].value[x] only Reference(SENDIOrganization) 
 * extension[period] ^short = "Period that this contact was valid for usage"
 * extension[period].value[x] only Period
 
 
 /*
-Extension: NDIOrganizationAffiliationTelecomNameExtension
-Id: ndi-organization-affiliation-telecom-name-extension
-Title: "NDIOrganizationAffiliationTelecomNameExtension"
+Extension: SENDIOrganizationAffiliationTelecomNameExtension
+Id: sendi-organization-affiliation-telecom-name-extension
+Title: "SENDIOrganizationAffiliationTelecomNameExtension"
 Description: "Extension to add R5 ExtendedContactDetail element name to R4 ContactPoint"
 Context: OrganizationAffiliation.telecom
 * ^status = #active
 * ^experimental = false
 * valueHumanName 1..1
 
-Extension: NDIOrganizationAffiliationTelecomPurposeExtension
-Id: ndi-organization-affiliation-telecom-purpose-extension
-Title: "NDIOrganizationAffiliationTelecomPurposeExtension"
+Extension: SENDIOrganizationAffiliationTelecomPurposeExtension
+Id: sendi-organization-affiliation-telecom-purpose-extension
+Title: "SENDIOrganizationAffiliationTelecomPurposeExtension"
 Description: "Extension to add R5 ExtendedContactDetail element purpose to R4 ContactPoint"
 Context: OrganizationAffiliation.telecom
 * ^status = #active
 * ^experimental = false
 * valueCodeableConcept 1..1
-* valueCodeableConcept from NDIOrganizationAffiliationContactPurposeValueSet
+* valueCodeableConcept from SENDIOrganizationAffiliationContactPurposeValueSet
 
-Extension: NDIOrganizationAffiliationTelecomAddressExtension
-Id: ndi-organization-affiliation-telecom-address-extension
-Title: "NDIOrganizationAffiliationTelecomAddressExtension"
+Extension: SENDIOrganizationAffiliationTelecomAddressExtension
+Id: sendi-organization-affiliation-telecom-address-extension
+Title: "SENDIOrganizationAffiliationTelecomAddressExtension"
 Description: "Extension to add R5 ExtendedContactDetail element address to R4 ContactPoint"
 Context: OrganizationAffiliation.telecom
 * ^status = #active

@@ -1,7 +1,7 @@
-Profile: NDIPractitioner
+Profile: SENDIPractitioner
 Parent: http://hl7.se/fhir/ig/base/StructureDefinition/SEBasePractitioner
-Id: ndi-practitioner
-Title: "NDI Practitioner"
+Id: sendi-practitioner
+Title: "SENDI Practitioner"
 Description: "text"
 * ^status = #active
 * identifier 1..* MS
@@ -9,15 +9,15 @@ Description: "text"
 * telecom 1..* MS
 // * address 0..* MS
 
-Profile: NDIPractitionerRole
+Profile: SENDIPractitionerRole
 Parent: http://hl7.se/fhir/ig/base/StructureDefinition/SEBasePractitionerRole
-Id: ndi-practitioner-role
-Title: "NDI PractitionerRole"
+Id: sendi-practitioner-role
+Title: "SENDI PractitionerRole"
 Description: "text"
 * ^status = #active
 * organization 1..1 MS
-* organization only Reference(NDIOrganization)
+* organization only Reference(SENDIOrganization)
 * practitioner 1..1 MS
-* practitioner only Reference(NDIPractitioner)
+* practitioner only Reference(SENDIPractitioner)
 * code 1..* MS
 

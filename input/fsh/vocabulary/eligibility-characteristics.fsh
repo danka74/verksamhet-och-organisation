@@ -1,6 +1,6 @@
-CodeSystem: NDIEligibilityCodeSystem
-Id: ndi-eligibility-code-system
-Title: "NDIEligibilityCodeSystem"
+CodeSystem: SENDIEligibilityCodeSystem
+Id: sendi-eligibility-code-system
+Title: "SENDIEligibilityCodeSystem"
 Description: "Code system for eligiblity of healthcare service"
 * ^experimental = false
 * ^caseSensitive = true
@@ -10,9 +10,9 @@ Description: "Code system for eligiblity of healthcare service"
 * #specialReferralProcedure "Special referral procedure" "Used when a special referral procedure is noted, together with eligibility.comment element"
 * #promissoryNote "Promissory note" "A note that the ordering party will pay the performing party for the services agreed"
 
-CodeSystem: NDIReferralTypeCodeSystem
-Id: ndi-referral-type-code-system
-Title: "NDI Referral Type Code System"
+CodeSystem: SENDIReferralTypeCodeSystem
+Id: sendi-referral-type-code-system
+Title: "SENDI Referral Type Code System"
 Description: "Code system for type of referral required for a healthcare service"
 * ^experimental = false
 * ^caseSensitive = true
@@ -20,9 +20,9 @@ Description: "Code system for type of referral required for a healthcare service
 * #regionReferral "Region referral" "Definition..."
 * #professionReferral "Profession referral" "Defintion..."
 
-ValueSet: NDITargetGroupEligibilityCharacteristicsValueset
-Id: ndi-target-group-eligibility-characteristics-valueset
-Title: "NDI Target Group Eligibility characteristics valueset"
+ValueSet: SENDITargetGroupEligibilityCharacteristicsValueset
+Id: sendi-target-group-eligibility-characteristics-valueset
+Title: "SENDI Target Group Eligibility characteristics valueset"
 Description: "Value set for target group eligibility characteristics"
 * ^status = #active
 * $SCTSE#424144002 "aktuell kronologisk ålder"
@@ -30,25 +30,25 @@ Description: "Value set for target group eligibility characteristics"
 * $SCTSE#60621009 "BMI"
 * $SCTSE#302132005 "ASA-klass"
 
-ValueSet: NDIEligibilityConditionCharacteristicsValueset
-Id: ndi-eligibility-condition-characteristics-valueset
-Title: "NDI Eligibility condition characteristics valueset"
-Description: "Value set for eligibility condition characteristics"
+ValueSet: SENDIEligibilityCosenditionCharacteristicsValueset
+Id: sendi-eligibility-cosendition-characteristics-valueset
+Title: "SENDI Eligibility cosendition characteristics valueset"
+Description: "Value set for eligibility cosendition characteristics"
 * ^status = #active
-* include codes from system NDIEligibilityCodeSystem
+* include codes from system SENDIEligibilityCodeSystem
 
 
-ValueSet: NDIEligibilityCharacteristicsValueset
-Id: ndi-eligibility-characteristics-valueset
-Title: "NDI Eligibility characteristics valueset"
+ValueSet: SENDIEligibilityCharacteristicsValueset
+Id: sendi-eligibility-characteristics-valueset
+Title: "SENDI Eligibility characteristics valueset"
 Description: "Value set for eligibility characteristics"
 * ^status = #active
-* include codes from valueset NDIEligibilityConditionCharacteristicsValueset
-* include codes from valueset NDITargetGroupEligibilityCharacteristicsValueset
+* include codes from valueset SENDIEligibilityCosenditionCharacteristicsValueset
+* include codes from valueset SENDITargetGroupEligibilityCharacteristicsValueset
 
-ValueSet: NDIReferralTypeValueSet
-Id: NDIReferralTypeValueSet
-Title: "NDIReferralTypeValueSet"
+ValueSet: SENDIReferralTypeValueSet
+Id: SENDIReferralTypeValueSet
+Title: "SENDIReferralTypeValueSet"
 Description: "Value set for type of referral"
 * ^status = #active
-* include codes from system NDIReferralTypeCodeSystem
+* include codes from system SENDIReferralTypeCodeSystem

@@ -1,7 +1,7 @@
-Profile: NDILocation
+Profile: SENDILocation
 Parent: Location
-Id: ndi-location
-Title: "NDI Location"
+Id: sendi-location
+Title: "SENDI Location"
 Description: "text"
 * ^status = #active
 * identifier 1..* MS
