@@ -11,7 +11,7 @@ Description: "text"
 
 Profile: NDIPractitionerRole
 Parent: http://hl7.se/fhir/ig/base/StructureDefinition/SEBasePractitionerRole
-Id: cok-practitioner-role
+Id: ndi-practitioner-role
 Title: "NDI PractitionerRole"
 Description: "text"
 * ^status = #active
