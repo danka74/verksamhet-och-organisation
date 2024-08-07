@@ -1,8 +1,8 @@
 Instance: Organization1
-InstanceOf: VOKOrganization
+InstanceOf: NDIOrganization
 Usage: #example
 Title: "Organization1"
-Description: "VOKOrganization example 1"
+Description: "NDIOrganization example 1"
 * name = "Region Östergötland"
 * identifier[organizationIdentifier].value = "232100-0040"
 * extension[organizationActive].valueBoolean = true

@@ -5,8 +5,8 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: ehalsomyndigheten.se.katalog
 canonical: http://electronichealth.se/fhir/katalog
-name: VOKIg
-title: Implementationsguide för Nationell katalog över vårdgivare och utförare av socialtjänst
+name: BusinessOrganizationNDIIg
+title: Implementationsguide for business and organization for Swedish health- and social care national digital infrastructure
 # description: Example Implementation Guide for getting started with SUSHI
 status: draft # draft | active | retired | unknown
 version: 0.1.0

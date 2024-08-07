@@ -1,6 +1,6 @@
-ValueSet: VOKServiceTypeValueSet
-Id: vok-service-type-value-set
-Title: "VOK Service Type ValueSet"
+ValueSet: NDIServiceTypeValueSet
+Id: ndi-service-type-value-set
+Title: "NDI Service Type ValueSet"
 // Description: ""
 * ^status = #active
 * $SCTSE#1255914002 "brännskadevård"

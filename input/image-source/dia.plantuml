@@ -1,5 +1,5 @@
 @startuml dia
-class VOKOrganization {
+class NDIOrganization {
     identifier 1..* : Identifier
 }
 

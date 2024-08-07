@@ -1,15 +1,15 @@
-Profile: VOKOrganizationAffiliation
+Profile: NDIOrganizationAffiliation
 Parent: OrganizationAffiliation
-Id: vok-organization-affiliation
-Title: "VOK OrganizationAffiliation"
+Id: ndi-organization-affiliation
+Title: "NDI OrganizationAffiliation"
 Description: """Representation of an assigned commission from a client/customer organization to 
     a performing organization related to a certain service."""
 * ^status = #active
 * organization 1..1 MS
-* organization only Reference(VOKOrganization)
+* organization only Reference(NDIOrganization)
 * participatingOrganization 1..1 MS
-* participatingOrganization only Reference(VOKOrganization)
+* participatingOrganization only Reference(NDIOrganization)
 * healthcareService 1..* MS
-* healthcareService only Reference(VOKHealthcareService)
+* healthcareService only Reference(NDIHealthcareService)
 * code 1..* MS
-* extension contains VOKContactExtension named contact 0..1 MS
+* extension contains NDIContactExtension named contact 0..1 MS

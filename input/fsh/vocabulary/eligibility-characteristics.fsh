@@ -1,6 +1,6 @@
-CodeSystem: VOKEligibilityCodeSystem
-Id: vok-eligibility-code-system
-Title: "VOKEligibilityCodeSystem"
+CodeSystem: NDIEligibilityCodeSystem
+Id: ndi-eligibility-code-system
+Title: "NDIEligibilityCodeSystem"
 Description: "Code system for eligiblity of healthcare service"
 * ^experimental = false
 * ^caseSensitive = true
@@ -10,9 +10,9 @@ Description: "Code system for eligiblity of healthcare service"
 * #specialReferralProcedure "Special referral procedure" "Used when a special referral procedure is noted, together with eligibility.comment element"
 * #promissoryNote "Promissory note" "A note that the ordering party will pay the performing party for the services agreed"
 
-CodeSystem: VOKReferralTypeCodeSystem
-Id: vok-referral-type-code-system
-Title: "VOK Referral Type Code System"
+CodeSystem: NDIReferralTypeCodeSystem
+Id: ndi-referral-type-code-system
+Title: "NDI Referral Type Code System"
 Description: "Code system for type of referral required for a healthcare service"
 * ^experimental = false
 * ^caseSensitive = true
@@ -20,9 +20,9 @@ Description: "Code system for type of referral required for a healthcare service
 * #regionReferral "Region referral" "Definition..."
 * #professionReferral "Profession referral" "Defintion..."
 
-ValueSet: VOKTargetGroupEligibilityCharacteristicsValueset
-Id: vok-target-group-eligibility-characteristics-valueset
-Title: "VOK Target Group Eligibility characteristics valueset"
+ValueSet: NDITargetGroupEligibilityCharacteristicsValueset
+Id: ndi-target-group-eligibility-characteristics-valueset
+Title: "NDI Target Group Eligibility characteristics valueset"
 Description: "Value set for target group eligibility characteristics"
 * ^status = #active
 * $SCTSE#424144002 "aktuell kronologisk ålder"
@@ -30,25 +30,25 @@ Description: "Value set for target group eligibility characteristics"
 * $SCTSE#60621009 "BMI"
 * $SCTSE#302132005 "ASA-klass"
 
-ValueSet: VOKEligibilityConditionCharacteristicsValueset
-Id: vok-eligibility-condition-characteristics-valueset
-Title: "VOK Eligibility condition characteristics valueset"
+ValueSet: NDIEligibilityConditionCharacteristicsValueset
+Id: ndi-eligibility-condition-characteristics-valueset
+Title: "NDI Eligibility condition characteristics valueset"
 Description: "Value set for eligibility condition characteristics"
 * ^status = #active
-* include codes from system VOKEligibilityCodeSystem
+* include codes from system NDIEligibilityCodeSystem
 
 
-ValueSet: VOKEligibilityCharacteristicsValueset
-Id: vok-eligibility-characteristics-valueset
-Title: "VOK Eligibility characteristics valueset"
+ValueSet: NDIEligibilityCharacteristicsValueset
+Id: ndi-eligibility-characteristics-valueset
+Title: "NDI Eligibility characteristics valueset"
 Description: "Value set for eligibility characteristics"
 * ^status = #active
-* include codes from valueset VOKEligibilityConditionCharacteristicsValueset
-* include codes from valueset VOKTargetGroupEligibilityCharacteristicsValueset
+* include codes from valueset NDIEligibilityConditionCharacteristicsValueset
+* include codes from valueset NDITargetGroupEligibilityCharacteristicsValueset
 
-ValueSet: VOKReferralTypeValueSet
-Id: VOKReferralTypeValueSet
-Title: "VOKReferralTypeValueSet"
+ValueSet: NDIReferralTypeValueSet
+Id: NDIReferralTypeValueSet
+Title: "NDIReferralTypeValueSet"
 Description: "Value set for type of referral"
 * ^status = #active
-* include codes from system VOKReferralTypeCodeSystem
+* include codes from system NDIReferralTypeCodeSystem

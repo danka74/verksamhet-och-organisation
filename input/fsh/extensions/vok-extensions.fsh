@@ -1,56 +1,56 @@
-Extension: VOKOrganizationActiveStatusExtension
-Id: vok-organization-active-status-extension
-Title: "VOKOrganizationActiveStatusExtension"
-Description: "VOK extension for organization status (active=true, inactive=false)"
+Extension: NDIOrganizationActiveStatusExtension
+Id: ndi-organization-active-status-extension
+Title: "NDIOrganizationActiveStatusExtension"
+Description: "NDI extension for organization status (active=true, inactive=false)"
 Context: Organization
 * ^status = #active
 * ^experimental = false
 * value[x] only boolean
 
-Extension: VOKOrganizationLegalFormExtension
-Id: vok-organization-legal-form-extension
-Title: "VOKOrganizationLegalFormExtension"
-Description: "VOK extension for organization legal form"
+Extension: NDIOrganizationLegalFormExtension
+Id: ndi-organization-legal-form-extension
+Title: "NDIOrganizationLegalFormExtension"
+Description: "NDI extension for organization legal form"
 Context: Organization
 * ^status = #active
 * ^experimental = false
 * value[x] only Coding
 * valueCoding from SkatteverketLegalFormValueSet (required)
 
-Extension: VOKOrganizationOwnershipExtension
-Id: vok-organization-ownership-extension
-Title: "VOKOrganizationOwnershipExtension"
-Description: "VOK extension for organization ownership type"
+Extension: NDIOrganizationOwnershipExtension
+Id: ndi-organization-ownership-extension
+Title: "NDIOrganizationOwnershipExtension"
+Description: "NDI extension for organization ownership type"
 Context: Organization
 * ^status = #active
 * ^experimental = false
 * value[x] only Coding
 * valueCoding from SCBOwnershipValueSet (required)
 
-Extension: VOKHealthcareServiceEncounterMeansExtension
-Id: vok-healthcare-service-encounter-means-extension
-Title: "VOKHealthcareServiceEncounterMeansExtension"
-Description: "VOK extension for healthcare service means of encounter (e.g. physical, virtual)"
+Extension: NDIHealthcareServiceEncounterMeansExtension
+Id: ndi-healthcare-service-encounter-means-extension
+Title: "NDIHealthcareServiceEncounterMeansExtension"
+Description: "NDI extension for healthcare service means of encounter (e.g. physical, virtual)"
 Context: HealthcareService
 * ^status = #active
 * ^experimental = false
 * value[x] only Coding
-* valueCoding from VOKEncounterMeansValueSet (required)
+* valueCoding from NDIEncounterMeansValueSet (required)
 
 // backported from 6.0.0-ci build
-Extension: VOKEligibilityValueExtension
-Id: vok-eligibility-value-extension
-Title: "VOKEligibilityValueExtension"
-Description: "VOK extension for HealthcareService eligibility value"
+Extension: NDIEligibilityValueExtension
+Id: ndi-eligibility-value-extension
+Title: "NDIEligibilityValueExtension"
+Description: "NDI extension for HealthcareService eligibility value"
 Context: HealthcareService.eligibility
 * ^status = #active
 * ^experimental = false
 * valueReference 1..1
-* valueReference only Reference(VOKEligibilityGroup)
+* valueReference only Reference(NDIEligibilityGroup)
 
-Extension: VOKOrganizationAdditionalRelationshipExtension
-Id: vok-organization-additional-relationship-extension
-Title: "VOKOrganizationAdditionalRelationshipExtension"
+Extension: NDIOrganizationAdditionalRelationshipExtension
+Id: ndi-organization-additional-relationship-extension
+Title: "NDIOrganizationAdditionalRelationshipExtension"
 Description: "Extension for an additional partOf to represent additional organizational structure"
 Context: Organization
 * ^status = #active
@@ -58,22 +58,22 @@ Context: Organization
 * extension contains
     additionalRelationship 1..1 and
     additionalRelationshipType 1..1
-* extension[additionalRelationship].value[x] only Reference(VOKOrganization)
+* extension[additionalRelationship].value[x] only Reference(NDIOrganization)
 * extension[additionalRelationshipType].value[x] only Coding
-* extension[additionalRelationshipType].valueCoding from VOKOrganizationAdditionalRelationshipTypeValueSet (required)
+* extension[additionalRelationshipType].valueCoding from NDIOrganizationAdditionalRelationshipTypeValueSet (required)
 
-Extension: VOKHealthcareServicePeriodExtension
-Id: vok-healthcare-service-period-extension
-Title: "VOKHealthcareServicePeriodExtension"
+Extension: NDIHealthcareServicePeriodExtension
+Id: ndi-healthcare-service-period-extension
+Title: "NDIHealthcareServicePeriodExtension"
 Description: "Extension for the period during which the service is available and offered"
 Context: HealthcareService
 * ^status = #active
 * ^experimental = false
 * valueRange 1..1
 
-Extension: VOKContactExtension
-Id: vok-contact-extension
-Title: "VOKContactExtension"
+Extension: NDIContactExtension
+Id: ndi-contact-extension
+Title: "NDIContactExtension"
 Description: "Extension to add R5 ExtendedContactDetail data type to R4"
 Context: OrganizationAffiliation, HealthcareService
 * ^status = #active
@@ -86,7 +86,7 @@ Context: OrganizationAffiliation, HealthcareService
     period 0..1
 * extension[purpose] ^short = "The type of contact"
 * extension[purpose].value[x] only CodeableConcept
-* extension[purpose].valueCodeableConcept from VOKContactPurposeValueSet
+* extension[purpose].valueCodeableConcept from NDIContactPurposeValueSet
 * extension[name] ^short = "Name of an individual to contact"
 * extension[name].value[x] only HumanName
 * extension[telecom] ^short = "Contact details (e.g.phone/fax/url)"
@@ -94,34 +94,34 @@ Context: OrganizationAffiliation, HealthcareService
 * extension[address] ^short = "Address for the contact"
 * extension[address].value[x] only Address
 * extension[organization] ^short = "This contact detail is handled/monitored by a specific organization"
-* extension[organization].value[x] only Reference(VOKOrganization) 
+* extension[organization].value[x] only Reference(NDIOrganization) 
 * extension[period] ^short = "Period that this contact was valid for usage"
 * extension[period].value[x] only Period
 
 
 /*
-Extension: VOKOrganizationAffiliationTelecomNameExtension
-Id: vok-organization-affiliation-telecom-name-extension
-Title: "VOKOrganizationAffiliationTelecomNameExtension"
+Extension: NDIOrganizationAffiliationTelecomNameExtension
+Id: ndi-organization-affiliation-telecom-name-extension
+Title: "NDIOrganizationAffiliationTelecomNameExtension"
 Description: "Extension to add R5 ExtendedContactDetail element name to R4 ContactPoint"
 Context: OrganizationAffiliation.telecom
 * ^status = #active
 * ^experimental = false
 * valueHumanName 1..1
 
-Extension: VOKOrganizationAffiliationTelecomPurposeExtension
-Id: vok-organization-affiliation-telecom-purpose-extension
-Title: "VOKOrganizationAffiliationTelecomPurposeExtension"
+Extension: NDIOrganizationAffiliationTelecomPurposeExtension
+Id: ndi-organization-affiliation-telecom-purpose-extension
+Title: "NDIOrganizationAffiliationTelecomPurposeExtension"
 Description: "Extension to add R5 ExtendedContactDetail element purpose to R4 ContactPoint"
 Context: OrganizationAffiliation.telecom
 * ^status = #active
 * ^experimental = false
 * valueCodeableConcept 1..1
-* valueCodeableConcept from VOKOrganizationAffiliationContactPurposeValueSet
+* valueCodeableConcept from NDIOrganizationAffiliationContactPurposeValueSet
 
-Extension: VOKOrganizationAffiliationTelecomAddressExtension
-Id: vok-organization-affiliation-telecom-address-extension
-Title: "VOKOrganizationAffiliationTelecomAddressExtension"
+Extension: NDIOrganizationAffiliationTelecomAddressExtension
+Id: ndi-organization-affiliation-telecom-address-extension
+Title: "NDIOrganizationAffiliationTelecomAddressExtension"
 Description: "Extension to add R5 ExtendedContactDetail element address to R4 ContactPoint"
 Context: OrganizationAffiliation.telecom
 * ^status = #active

@@ -1,7 +1,7 @@
-Profile: VOKPractitioner
+Profile: NDIPractitioner
 Parent: http://hl7.se/fhir/ig/base/StructureDefinition/SEBasePractitioner
-Id: vok-practitioner
-Title: "VOK Practitioner"
+Id: ndi-practitioner
+Title: "NDI Practitioner"
 Description: "text"
 * ^status = #active
 * identifier 1..* MS
@@ -9,15 +9,15 @@ Description: "text"
 * telecom 1..* MS
 // * address 0..* MS
 
-Profile: VOKPractitionerRole
+Profile: NDIPractitionerRole
 Parent: http://hl7.se/fhir/ig/base/StructureDefinition/SEBasePractitionerRole
 Id: cok-practitioner-role
-Title: "VOK PractitionerRole"
+Title: "NDI PractitionerRole"
 Description: "text"
 * ^status = #active
 * organization 1..1 MS
-* organization only Reference(VOKOrganization)
+* organization only Reference(NDIOrganization)
 * practitioner 1..1 MS
-* practitioner only Reference(VOKPractitioner)
+* practitioner only Reference(NDIPractitioner)
 * code 1..* MS
 
