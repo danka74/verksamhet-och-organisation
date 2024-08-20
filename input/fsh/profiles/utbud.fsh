@@ -1,7 +1,7 @@
-Profile: VOKHealthcareService
+Profile: SENDIHealthcareService
 Parent: HealthcareService
-Id: vok-healthcare-service
-Title: "VOK Service"
+Id: sendi-healthcare-service
+Title: "SENDI Service"
 Description: "A service provided by an organization"
 * ^status = #active
 * identifier 1..* MS
@@ -9,30 +9,30 @@ Description: "A service provided by an organization"
 * category 0..*
 * name 0..1 MS // beskrivning? 0..*
 * comment 0..1 MS
-* extension contains VOKHealthcareServiceEncounterMeansExtension named encounterMeans 1..1 MS
-* extension contains VOKHealthcareServicePeriodExtension named period 1..1 MS
+* extension contains SENDIHealthcareServiceEncounterMeansExtension named encounterMeans 1..1 MS
+* extension contains SENDIHealthcareServicePeriodExtension named period 1..1 MS
 * availableTime 0..* MS
 * notAvailable 0..* MS
 * eligibility 0..* MS
-* eligibility.extension contains VOKEligibilityValueExtension named eligibilityValue 0..1 MS
-* eligibility.extension[eligibilityValue].valueReference only Reference(VOKEligibilityGroup)
+* eligibility.extension contains SENDIEligibilityValueExtension named eligibilityValue 0..1 MS
+* eligibility.extension[eligibilityValue].valueReference only Reference(SENDIEligibilityGroup)
 * location 0..* MS
-* location only Reference(VOKLocation)
+* location only Reference(SENDILocation)
 * telecom 0..* MS
-* extension contains VOKContactExtension named contact 0..1 MS
+* extension contains SENDIContactExtension named contact 0..1 MS
 * providedBy 0..1 MS
-* providedBy only Reference(VOKOrganization)
+* providedBy only Reference(SENDIOrganization)
 
-Profile: VOKEligibilityGroup
+Profile: SENDIEligibilityGroup
 Parent: Group
-Id: vok-eligibility-group
-Title: "VOK Eligibility Group"
+Id: sendi-eligibility-group
+Title: "SENDI Eligibility Group"
 Description: "A group resource describing en eligibility group"
 * ^status = #active
-* characteristic.code from VOKEligibilityCharacteristicsValueset (extensible)
+* characteristic.code from SENDIEligibilityCharacteristicsValueset (extensible)
 
 Profile: VSEligibilityGroup
-Parent: VOKEligibilityGroup
+Parent: SENDIEligibilityGroup
 Id: VSEligibilityGroup
 Title: "VS Eligibility Group"
 Description: "A group resource describing en eligibility group for Vårdsök use case"
@@ -43,13 +43,13 @@ Description: "A group resource describing en eligibility group for Vårdsök use
 * characteristic ^slicing.ordered = false
 * characteristic contains kon 0..1 and alder 0..1
 * characteristic[kon].code = $SCTSE#184100006 "patientens kön"
-* characteristic[kon].valueCodeableConcept from VOKEligibilitySexValueSet (required)
+* characteristic[kon].valueCodeableConcept from SENDIEligibilitySexValueSet (required)
 * characteristic[kon].valueCodeableConcept 1..1 MS
 * characteristic[alder].code = $SCTSE#424144002 "aktuell kronologisk ålder"
 * characteristic[alder].valueRange 1..1 MS
 
 // Profile: VSHealthcareService
-// Parent: VOKHealthcareService
+// Parent: SENDIHealthcareService
 // Id: vs-healthcare-service
 // Title: "VS HealthcareService"
 // Description: "A service provided by an organization, constrained for Vårdsök project"
@@ -60,7 +60,7 @@ Description: "A group resource describing en eligibility group for Vårdsök use
 // * eligibility ^slicing.ordered = false
 // * eligibility contains kon 0..1 and alder 0..1
 // * eligibility[kon].code = $SCT#184100006 "patientens kön"
-// * eligibility[kon].extension[VOKEligibilityValueExtension].valueCodeableConcept from VOKEligibilitySexValueSet (required)
-// * eligibility[kon].extension[VOKEligibilityValueExtension].valueCodeableConcept 1..1 MS
+// * eligibility[kon].extension[SENDIEligibilityValueExtension].valueCodeableConcept from SENDIEligibilitySexValueSet (required)
+// * eligibility[kon].extension[SENDIEligibilityValueExtension].valueCodeableConcept 1..1 MS
 // * eligibility[alder].code = $SCT#424144002 "aktuell kronologisk ålder"
-// * eligibility[alder].extension[VOKEligibilityValueExtension].valueRange 1..1
+// * eligibility[alder].extension[SENDIEligibilityValueExtension].valueRange 1..1

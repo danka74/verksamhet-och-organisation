@@ -1,6 +1,6 @@
-ValueSet: VOKEncounterMeansValueSet
-Id: vok-encounter-means-value-set
-Title: "VOKEncounterMeansValueSet"
+ValueSet: SENDIEncounterMeansValueSet
+Id: sendi-encounter-means-value-set
+Title: "SENDIEncounterMeansValueSet"
 Description: "text"
 * ^status = #active
 * $AEC#VR

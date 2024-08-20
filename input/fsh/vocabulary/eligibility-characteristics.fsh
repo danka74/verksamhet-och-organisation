@@ -1,6 +1,6 @@
-CodeSystem: VOKEligibilityCodeSystem
-Id: vok-eligibility-code-system
-Title: "VOKEligibilityCodeSystem"
+CodeSystem: SENDIEligibilityCodeSystem
+Id: sendi-eligibility-code-system
+Title: "SENDIEligibilityCodeSystem"
 Description: "Code system for eligiblity of healthcare service"
 * ^experimental = false
 * ^caseSensitive = true
@@ -10,9 +10,9 @@ Description: "Code system for eligiblity of healthcare service"
 * #specialReferralProcedure "Special referral procedure" "Used when a special referral procedure is noted, together with eligibility.comment element"
 * #promissoryNote "Promissory note" "A note that the ordering party will pay the performing party for the services agreed"
 
-CodeSystem: VOKReferralTypeCodeSystem
-Id: vok-referral-type-code-system
-Title: "VOK Referral Type Code System"
+CodeSystem: SENDIReferralTypeCodeSystem
+Id: sendi-referral-type-code-system
+Title: "SENDI Referral Type Code System"
 Description: "Code system for type of referral required for a healthcare service"
 * ^experimental = false
 * ^caseSensitive = true
@@ -20,9 +20,9 @@ Description: "Code system for type of referral required for a healthcare service
 * #regionReferral "Region referral" "Definition..."
 * #professionReferral "Profession referral" "Defintion..."
 
-ValueSet: VOKTargetGroupEligibilityCharacteristicsValueset
-Id: vok-target-group-eligibility-characteristics-valueset
-Title: "VOK Target Group Eligibility characteristics valueset"
+ValueSet: SENDITargetGroupEligibilityCharacteristicsValueset
+Id: sendi-target-group-eligibility-characteristics-valueset
+Title: "SENDI Target Group Eligibility characteristics valueset"
 Description: "Value set for target group eligibility characteristics"
 * ^status = #active
 * $SCTSE#424144002 "aktuell kronologisk ålder"
@@ -30,25 +30,25 @@ Description: "Value set for target group eligibility characteristics"
 * $SCTSE#60621009 "BMI"
 * $SCTSE#302132005 "ASA-klass"
 
-ValueSet: VOKEligibilityConditionCharacteristicsValueset
-Id: vok-eligibility-condition-characteristics-valueset
-Title: "VOK Eligibility condition characteristics valueset"
-Description: "Value set for eligibility condition characteristics"
+ValueSet: SENDIEligibilityCosenditionCharacteristicsValueset
+Id: sendi-eligibility-cosendition-characteristics-valueset
+Title: "SENDI Eligibility cosendition characteristics valueset"
+Description: "Value set for eligibility cosendition characteristics"
 * ^status = #active
-* include codes from system VOKEligibilityCodeSystem
+* include codes from system SENDIEligibilityCodeSystem
 
 
-ValueSet: VOKEligibilityCharacteristicsValueset
-Id: vok-eligibility-characteristics-valueset
-Title: "VOK Eligibility characteristics valueset"
+ValueSet: SENDIEligibilityCharacteristicsValueset
+Id: sendi-eligibility-characteristics-valueset
+Title: "SENDI Eligibility characteristics valueset"
 Description: "Value set for eligibility characteristics"
 * ^status = #active
-* include codes from valueset VOKEligibilityConditionCharacteristicsValueset
-* include codes from valueset VOKTargetGroupEligibilityCharacteristicsValueset
+* include codes from valueset SENDIEligibilityCosenditionCharacteristicsValueset
+* include codes from valueset SENDITargetGroupEligibilityCharacteristicsValueset
 
-ValueSet: VOKReferralTypeValueSet
-Id: VOKReferralTypeValueSet
-Title: "VOKReferralTypeValueSet"
+ValueSet: SENDIReferralTypeValueSet
+Id: SENDIReferralTypeValueSet
+Title: "SENDIReferralTypeValueSet"
 Description: "Value set for type of referral"
 * ^status = #active
-* include codes from system VOKReferralTypeCodeSystem
+* include codes from system SENDIReferralTypeCodeSystem

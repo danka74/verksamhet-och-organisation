@@ -1,7 +1,7 @@
-Profile: VOKLocation
+Profile: SENDILocation
 Parent: Location
-Id: vok-location
-Title: "VOK Location"
+Id: sendi-location
+Title: "SENDI Location"
 Description: "text"
 * ^status = #active
 * identifier 1..* MS

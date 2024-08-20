@@ -13,7 +13,7 @@ Target: "Contract"
 * giltigTom -> "Contract.applies.end"
 * optionForlangning -> "Contract.term.offer.text"
 * beskrivning -> ""
-* avser -> "Contract.topicReference(VOKUppdragLogical)"
+* avser -> "Contract.topicReference(SENDIUppdragLogical)"
 * relationAvtal -> ""
 
 
@@ -245,9 +245,9 @@ Characteristics: #can-be-target
 * giltigTom 0..1 time "giltigTom" // Tidpunkt
 * optionForlangning 0..1 string "optionFörlängning" // Sträng
 * beskrivning 1..1 string "beskrivning" // Sträng
-* avser 0..* Reference(VOKUppdragLogical) "avser"
+* avser 0..* Reference(SENDIUppdragLogical) "avser"
 * avser ^definition = "avser"
-* relationAvtal 0..* Reference(VOKAvtalLogical) ""
+* relationAvtal 0..* Reference(SENDIAvtalLogical) ""
 * relationAvtal ^definition = "relationAvtal"
 
 
@@ -274,13 +274,13 @@ Characteristics: #can-be-target
 * adressland 0..1 string "adress.land" // Sträng
 * giltigFrom 1..1 time "giltigFrom" // Tidpunkt
 * giltigTom 0..1 time "giltigTom" // Tidpunkt
-* har 0..1 Reference(VOKOrganisatoriskEnhetLogical) "har"
+* har 0..1 Reference(SENDIOrganisatoriskEnhetLogical) "har"
 * har ^definition = "har"
-* finnsTillgangligUnder 0..* Reference(VOKTillganglighetstidLogical) "finns tillgänglig under"
+* finnsTillgangligUnder 0..* Reference(SENDITillganglighetstidLogical) "finns tillgänglig under"
 * finnsTillgangligUnder ^definition = "finnsTillgangligUnder"
-* arEnDelAv 0..* Reference(VOKTelekommunikationLogical) "är en del av"
+* arEnDelAv 0..* Reference(SENDITelekommunikationLogical) "är en del av"
 * arEnDelAv ^definition = "arEnDelAv"
-* harTillganglighetsavvikelse 0..* Reference(VOKStorningsinformationLogical) "har tillgänglighetsavvikelse"
+* harTillganglighetsavvikelse 0..* Reference(SENDIStorningsinformationLogical) "har tillgänglighetsavvikelse"
 * harTillganglighetsavvikelse ^definition = "harTillganglighetsavvikelse"
 
 
@@ -312,11 +312,11 @@ Characteristics: #can-be-target
 * agarkategori 0..1 Coding "ägarkategori" // Kod
 * giltigFrom 1..1 time "giltigFrom" // Tidpunkt
 * giltigTom 0..1 time "giltigTom" // Tidpunkt
-* relationOrganisation 0..* Reference(VOKOrganisationLogical) ""
+* relationOrganisation 0..* Reference(SENDIOrganisationLogical) ""
 * relationOrganisation ^definition = "relationOrganisation"
-* har 0..* Reference(VOKKontaktuppgiftLogical) "har"
+* har 0..* Reference(SENDIKontaktuppgiftLogical) "har"
 * har ^definition = "har"
-* har 0..* Reference(VOKTillstandLogical) "har"
+* har 0..* Reference(SENDITillstandLogical) "har"
 * har ^definition = "har"
 
 
@@ -342,19 +342,19 @@ Characteristics: #can-be-target
 * alias 0..* string "alias" // Sträng
 * giltigFrom 1..1 time "giltigFrom" // Tidpunkt
 * giltigTom 0..1 time "giltigTom" // Tidpunkt
-* relationOrganisatoriskEnhet 0..* Reference(VOKOrganisatoriskEnhetLogical) ""
+* relationOrganisatoriskEnhet 0..* Reference(SENDIOrganisatoriskEnhetLogical) ""
 * relationOrganisatoriskEnhet ^definition = "relationOrganisatoriskEnhet"
-* tillhor 0..1 Reference(VOKOrganisationLogical) "tillhör"
+* tillhor 0..1 Reference(SENDIOrganisationLogical) "tillhör"
 * tillhor ^definition = "tillhor"
-* arBelagenPa 0..* Reference(VOKPlatsLogical) "är belägen på"
+* arBelagenPa 0..* Reference(SENDIPlatsLogical) "är belägen på"
 * arBelagenPa ^definition = "arBelagenPa"
-* erbjuder 0..* Reference(VOKTjanstLogical) "erbjuder"
+* erbjuder 0..* Reference(SENDITjanstLogical) "erbjuder"
 * erbjuder ^definition = "erbjuder"
-* harOppetUnder 0..* Reference(VOKTillganglighetstidLogical) "har öppet under"
+* harOppetUnder 0..* Reference(SENDITillganglighetstidLogical) "har öppet under"
 * harOppetUnder ^definition = "harOppetUnder"
-* harTillganglighetsavvikelse 0..* Reference(VOKStorningsinformationLogical) "har tillgänglighetsavvikelse"
+* harTillganglighetsavvikelse 0..* Reference(SENDIStorningsinformationLogical) "har tillgänglighetsavvikelse"
 * harTillganglighetsavvikelse ^definition = "harTillganglighetsavvikelse"
-* har 0..* Reference(VOKTillstandLogical) "har"
+* har 0..* Reference(SENDITillstandLogical) "har"
 * har ^definition = "har"
 
 
@@ -376,7 +376,7 @@ Characteristics: #can-be-target
 * id 0..1 string "id" // Identitet
 * namn 1..1 string "namn" // Sträng
 * skyddadIdentitet 0..1 Coding "skyddadIdentitet" // Kod
-* antar 0..* Reference(VOKPersonrollLogical) "antar"
+* antar 0..* Reference(SENDIPersonrollLogical) "antar"
 * antar ^definition = "antar"
 
 
@@ -389,13 +389,13 @@ Characteristics: #can-be-target
 * kod 1..1 Coding "kod" // Kod
 * giltigFrom 1..1 time "giltigFrom" // Tidpunkt
 * giltigTom 0..1 time "giltigTom" // Tidpunkt
-* relationOrganisation 0..1 Reference(VOKOrganisationLogical) ""
+* relationOrganisation 0..1 Reference(SENDIOrganisationLogical) ""
 * relationOrganisation ^definition = "relationOrganisation"
-* relationOrganisatoriskEnhet 0..1 Reference(VOKOrganisatoriskEnhetLogical) ""
+* relationOrganisatoriskEnhet 0..1 Reference(SENDIOrganisatoriskEnhetLogical) ""
 * relationOrganisatoriskEnhet ^definition = "relationOrganisatoriskEnhet"
-* harDeltagande 0..1 Reference(VOKAvtalLogical) "har deltagande"
+* harDeltagande 0..1 Reference(SENDIAvtalLogical) "har deltagande"
 * harDeltagande ^definition = "harDeltagande"
-* har 0..1 Reference(VOKKontaktuppgiftLogical) "har"
+* har 0..1 Reference(SENDIKontaktuppgiftLogical) "har"
 * har ^definition = "har"
 
 
@@ -415,11 +415,11 @@ Characteristics: #can-be-target
 * lanskod 0..1 Coding "länskod" // Kod
 * giltigFrom 1..1 time "giltigFrom" // Tidpunkt
 * giltigTom 0..1 time "giltigTom" // Tidpunkt
-* delAv 0..1 Reference(VOKPlatsLogical) "del av"
+* delAv 0..1 Reference(SENDIPlatsLogical) "del av"
 * delAv ^definition = "delAv"
-* harPosition 0..1 Reference(VOKPositionLogical) "har position"
+* harPosition 0..1 Reference(SENDIPositionLogical) "har position"
 * harPosition ^definition = "harPosition"
-* avgransasGeografisktAv 3..* Reference(VOKPositionLogical) "avgränsas geografiskt av"
+* avgransasGeografisktAv 3..* Reference(SENDIPositionLogical) "avgränsas geografiskt av"
 * avgransasGeografisktAv ^definition = "avgransasGeografisktAv"
 
 
@@ -467,7 +467,7 @@ Characteristics: #can-be-target
 * starttid 0..1 time "starttid" // Tid
 * sluttid 0..1 time "sluttid" // Tid
 * veckodag 0..* Coding "veckodag" // Kod
-* finnsTillganglig 1..* Reference(VOKTjanstLogical) "finns tillgänglig"
+* finnsTillganglig 1..* Reference(SENDITjanstLogical) "finns tillgänglig"
 * finnsTillganglig ^definition = "finnsTillganglig"
 
 
