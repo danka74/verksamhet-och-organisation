@@ -5,7 +5,7 @@ Title: "SENDI Business"
 Description: """arbete som fortlöpande utförs i linje med viss övergripande inriktning"""
 * ^status = #active
 * providedBy 1..1 MS
-* providedBy only Reference(SENDIOrganization)
+* providedBy only Reference(SENDIOrganization or SENDIOrganizationalUnit)
 * category.coding ^slicing.discriminator.type = #value
 * category.coding ^slicing.discriminator.path = "system"
 * category.coding ^slicing.rules = #open
@@ -15,3 +15,5 @@ Description: """arbete som fortlöpande utförs i linje med viss övergripande i
 * category.coding[SENDIType] 1..1 MS
 * category.coding[SENDIType] from SENDIServiceTypeValueSet (required)
 * category.coding[HSAType] from HSAServiceTypeValueSet (required)
+* location 0..* MS
+* location only Reference(SENDILocation)
