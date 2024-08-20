@@ -1,6 +1,6 @@
-Profile: SENDIVerksamhet
+Profile: SENDIBusiness
 Parent: HealthcareService
-Id: SENDIVerksamhet
+Id: SENDIBusiness
 Title: "SENDI Business"
 Description: """arbete som fortlöpande utförs i linje med viss övergripande inriktning"""
 * ^status = #active
