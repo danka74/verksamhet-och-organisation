@@ -29,6 +29,10 @@ Id: sendi-organizational-unit
 Title: "SENDI Organizational Unit"
 Description: "Organizational unit profile for SENDI"
 * ^status = #active
+* contained ^slicing.discriminator.type = #value
+* contained ^slicing.discriminator.path = "resourceType"
+* contained ^slicing.rules = #open
+* contained contains SENDIBusiness 0..1 MS
 * identifier 1..* MS
 * type 0..* MS // skulle behövas en slice på type för olika kodverk
 * name 1..1 MS
