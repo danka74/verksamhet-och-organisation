@@ -41,6 +41,7 @@ Description: "Kardiologiska kliniken US, Linköping, example 1"
 * identifier[=].value = "SE2321000040-xxxxxx"
 * extension[organizationActive].valueBoolean = true
 * extension[period].valuePeriod.start = 1970-01-01
+* type = #dept
 * telecom[+].system = #phone
 * telecom[=].value = "010-1030000"
 * address[+].type = #physical
@@ -63,6 +64,7 @@ Description: "Avdelning C117 Hjärtmedicin, Kardiologiska kliniken US, Linköpin
 * identifier[=].value = "SE2321000040-yyyyyyy"
 * extension[organizationActive].valueBoolean = true
 * extension[period].valuePeriod.start = 1970-01-01
+* type = #dept
 * telecom[+].system = #phone
 * telecom[=].value = "010-1031107"
 * address[+].type = #physical
