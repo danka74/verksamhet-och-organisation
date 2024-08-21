@@ -11,9 +11,8 @@ Description: """arbete som fortlöpande utförs i linje med viss övergripande i
 * category.coding ^slicing.rules = #open
 * category.coding ^slicing.ordered = false 
 * category.coding ^slicing.description = "Slice on CodeableConcept.coding based on the system value"
-* category.coding contains SENDIType 0..1 and HSAType 0..1 // etc.
-* category.coding[SENDIType] 1..1 MS
-* category.coding[SENDIType] from SENDIServiceTypeValueSet (required)
-* category.coding[HSAType] from HSAServiceTypeValueSet (required)
+* category.coding contains SENDIBusinessType 0..1 MS and HSABusinessType 0..1 // etc.
+* category.coding[SENDIBusinessType] from SENDIBusinessTypeValueSet (required)
+* category.coding[HSABusinessType] from HSABusinessTypeValueSet (required)
 * location 0..* MS
 * location only Reference(SENDILocation)

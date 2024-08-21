@@ -1,13 +1,13 @@
-ValueSet: SENDIServiceTypeValueSet
-Id: sendi-service-type-value-set
-Title: "SENDI Service Type ValueSet"
+ValueSet: SENDIBusinessTypeValueSet
+Id: sendi-business-type-value-set
+Title: "SENDI Business Type ValueSet"
 // Description: ""
 * ^status = #active
-* $SCTSE#1255914002 "brännskadevård"
+* $SCTSE#394579002 "kardiologi"
 
-ValueSet: HSAServiceTypeValueSet
-Id: hsa-service-type-value-set
-Title: "HSAServiceTypeValueSet"
+ValueSet: HSABusinessTypeValueSet
+Id: hsa-business-type-value-set
+Title: "HSA Business Type ValueSet"
 // Description: ""
 * ^status = #active
-* include codes from system urn:oid:1.2.752.129.2.2.1.3
+* include codes from system $HSAB
